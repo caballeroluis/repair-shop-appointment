@@ -12,6 +12,12 @@
  */
 class Bootstrap extends CApplicationComponent
 {
+  
+  public function init() {
+    $this->registerAllCss();
+    $this->registerJs();
+    parent::init();
+}
 	// Bootstrap plugins.
 	const PLUGIN_AFFIX = 'affix';
 	const PLUGIN_ALERT = 'alert';
