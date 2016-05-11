@@ -1,3 +1,11 @@
+<?php 
+if (Yii::app()->user->isGuest) {
+  header('Location: http://'. $_SERVER['SERVER_NAME'].':' . $_SERVER['SERVER_PORT']. '/web/index.php/site/login');
+  die();
+} else {
+  
+}
+?>
 <?php
 /* @var $this HandicapController */
 /* @var $dataProvider CActiveDataProvider */
