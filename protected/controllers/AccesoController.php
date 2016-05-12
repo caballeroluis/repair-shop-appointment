@@ -1,16 +1,14 @@
 <?php
 
-class CalendarioController extends Controller
+class AccesoController extends Controller
 {
-    
+  
     public $layout = "//layouts/front";
-    
+  
 	public function actionIndex()
 	{
 		$this->render('index');
 	}
-        
-        
 
 	// Uncomment the following methods and override them if needed
 	/*
