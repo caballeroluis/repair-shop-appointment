@@ -590,3 +590,163 @@ REQUEST_URI=/web/index.php/registro
 in C:\xampp\htdocs\web\protected\views\registro\index.php (25)
 in C:\xampp\htdocs\web\protected\controllers\RegistroController.php (10)
 in C:\xampp\htdocs\web\index.php (13)
+2016/05/14 18:43:01 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/index.php/mano/index
+HTTP_REFERER=http://localhost/web/index.php/estado/index
+---
+2016/05/14 18:43:14 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/index.php/mano/index
+HTTP_REFERER=http://localhost/web/index.php/estado/index
+---
+2016/05/14 18:46:26 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/index.php/estado/index
+HTTP_REFERER=http://localhost/web/index.php/cliente/index
+---
+2016/05/14 18:46:28 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/index.php/cliente/index
+HTTP_REFERER=http://localhost/web/index.php/otro/index
+---
+2016/05/14 18:46:28 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/index.php/otro/index
+HTTP_REFERER=http://localhost/web/index.php/cita/index
+---
+2016/05/14 18:46:29 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/index.php/cita/index
+HTTP_REFERER=http://localhost/web/index.php/estado/index
+---
+2016/05/14 18:46:29 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/index.php/mano/index
+HTTP_REFERER=http://localhost/web/index.php/estado/index
+---
+2016/05/14 18:46:31 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/index.php/admin
+---
+2016/05/14 18:46:31 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/index.php/admin
+---
+2016/05/14 18:46:38 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/index.php
+---
+2016/05/14 19:06:22 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/handicap/index
+HTTP_REFERER=http://localhost/web/site/index
+---
+2016/05/14 19:06:34 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.ulrSuffix" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\YiiBase.php(220): CComponent->__set('ulrSuffix', '.html')
+#1 C:\xampp\htdocs\web\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\web\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\xampp\htdocs\web\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/web/handicap/index.html
+---
+2016/05/14 19:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.html".' in C:\xampp\htdocs\web\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(270): CController->missingAction('index.html')
+#1 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('index.html')
+#2 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap/index....')
+#3 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/handicap/index.html
+---
+2016/05/14 19:06:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.html".' in C:\xampp\htdocs\web\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(270): CController->missingAction('index.html')
+#1 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('index.html')
+#2 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap/index....')
+#3 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/handicap/index.html
+---

@@ -10,7 +10,9 @@ class CalendarioController extends Controller
 		$this->render('index');
 	}
         
-        
+        public function actionAcceder(){
+          
+        }
 
 	// Uncomment the following methods and override them if needed
 	/*

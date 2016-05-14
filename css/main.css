@@ -246,9 +246,10 @@ div.search-form
   .pie {
     color: white;
     text-align: center;
-    background-color: black;
+    background-color: #bebebe;
   }
   
   .cuerpo {
     background-color: #f4f4f4;
   }
+ 

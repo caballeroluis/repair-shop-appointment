@@ -24,7 +24,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
-            <h1>Cita</h1>
+            <h1>Calendario de citas</h1>
           </div>
       </div>
     </nav>

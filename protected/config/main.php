@@ -50,6 +50,7 @@ return array(
 		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+                      'showScriptName' => false,
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
@@ -57,7 +58,7 @@ return array(
                             '' => 'calendario/index',
                             '/calendario' => '/calendario/index',
 //                            'registro' => 'registro/index',
-//                            'admin' => 'site/index',
+                            'admin' => 'site/index',
 			),
 		),
 		
