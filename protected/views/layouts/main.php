@@ -30,17 +30,18 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'Home', 'url'=>array('/site')),
 //				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 //				array('label'=>'Contact', 'url'=>array('/site/contact')),
-                            array('label' => 'Clientes', 'url' => array('/cliente/index')),
-                            array('label' => 'Citas', 'url' => array('/cita/index')),
-                            array('label' => 'Estados', 'url' => array('/estado/index')),
-                            array('label' => 'Otros', 'url' => array('/otro/index')),
-                            array('label' => 'Handicaps', 'url' => array('/handicap/index')),
-                            array('label' => 'Piezas', 'url' => array('/pieza/index')),
-                            array('label' => 'Manos', 'url' => array('/mano/index')),
-                            array('label' => 'Marcas', 'url' => array('/marcaPieza/index')),
+                            array('label' => 'Clientes', 'url' => array('/cliente')),
+                            array('label' => 'Citas', 'url' => array('/cita')),
+                            array('label' => 'Estados', 'url' => array('/estado')),
+                            array('label' => 'Otros', 'url' => array('/otro')),
+                            array('label' => 'Handicaps', 'url' => array('/handicap')),
+                            array('label' => 'Piezas', 'url' => array('/pieza')),
+                            array('label' => 'Manos', 'url' => array('/mano')),
+                            array('label' => 'Marcas', 'url' => array('/marcaPieza')),
+                            array('label' => 'Calendario', 'url' => array('/calendario')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

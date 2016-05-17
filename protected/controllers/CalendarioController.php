@@ -10,8 +10,14 @@ class CalendarioController extends Controller
 		$this->render('index');
 	}
         
-        public function actionAcceder(){
-          
+        public function actionRegistro(){
+          $usuario = $_REQUEST['datos'];
+        }
+        
+        public function actionAcceso(){
+          echo hash("sha512", 'abc');
+          echo '<br />';
+          echo hash("sha256", 'abc');
         }
 
 	// Uncomment the following methods and override them if needed
