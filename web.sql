@@ -42,6 +42,14 @@ CREATE TABLE IF NOT EXISTS `web`.`cliente` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `nombre`, `apellido1`, `apellido2`, `telefono`, `codigo_postal`, `email`, `fecha_creacion`, `fecha_modifiacion`, `password`, `vivo`, `imagen`, `codigo_activacion`, `activado`, `username`) VALUES
+(1, 'luis', 'mi', 'guel', 913333333, 28033, 'luis.proyectoaplicaciones@gmail.com', '2016-01-10 00:00:00', '2016-05-14 16:44:59', 'luis', 1, '', 'asdfasdf12341234', 0, 'luis'),
+(2, 'admin', 'admin', 'admin', 9, 9, 'admin@admin.es', '2016-01-10 00:00:00', '2016-01-10 00:00:00', '1234', 1, '', 'adminadmin', 0, 'admin');
+
 
 -- -----------------------------------------------------
 -- Table `web`.`estado`
