@@ -76,6 +76,11 @@
 		<?php echo $form->textField($model,'activado'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>128)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

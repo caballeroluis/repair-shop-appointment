@@ -18,6 +18,7 @@
  * @property string $imagen
  * @property string $codigo_activacion
  * @property integer $activado
+ * @property string $username
  *
  * The followings are the available model relations:
  * @property Cita[] $citas
@@ -40,15 +41,15 @@ class Cliente extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fecha_creacion, password, codigo_activacion', 'required'),
+			array('fecha_creacion, password, codigo_activacion, username', 'required'),
 			array('telefono, codigo_postal, vivo, activado', 'numerical', 'integerOnly'=>true),
 			array('nombre, apellido1, apellido2', 'length', 'max'=>45),
-			array('email', 'length', 'max'=>128),
+			array('email, username', 'length', 'max'=>128),
 			array('password, imagen, codigo_activacion', 'length', 'max'=>255),
 			array('fecha_modifiacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, apellido1, apellido2, telefono, codigo_postal, email, fecha_creacion, fecha_modifiacion, password, vivo, imagen, codigo_activacion, activado', 'safe', 'on'=>'search'),
+			array('id, nombre, apellido1, apellido2, telefono, codigo_postal, email, fecha_creacion, fecha_modifiacion, password, vivo, imagen, codigo_activacion, activado, username', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -84,6 +85,7 @@ class Cliente extends CActiveRecord
 			'imagen' => 'Imagen',
 			'codigo_activacion' => 'Codigo Activacion',
 			'activado' => 'Activado',
+			'username' => 'Username',
 		);
 	}
 
@@ -119,6 +121,7 @@ class Cliente extends CActiveRecord
 		$criteria->compare('imagen',$this->imagen,true);
 		$criteria->compare('codigo_activacion',$this->codigo_activacion,true);
 		$criteria->compare('activado',$this->activado);
+		$criteria->compare('username',$this->username,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

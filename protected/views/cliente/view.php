@@ -41,5 +41,6 @@ $this->menu=array(
 		'imagen',
 		'codigo_activacion',
 		'activado',
+		'username',
 	),
 )); ?>
