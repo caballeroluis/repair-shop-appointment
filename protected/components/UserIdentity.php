@@ -8,7 +8,8 @@ class UserIdentity extends CUserIdentity {
     $cliente = Cliente::model()->find("LOWER(username)=?", array(strtolower($this->username)));
     if($cliente === null) {
       $this->errorCode = self::ERROR_USERNAME_INVALID;
-    } elseif ($this->password !== $cliente->password) {
+    } elseif (hash('sha512', $this->password) !== $cliente->password) { // comenta esta linea porque encriptaras en cliente con js
+//    } elseif ($this->password !== $cliente->password) {
       $this->errorCode=self::ERROR_PASSWORD_INVALID;
     } else {
       $this->_id=$cliente->id;

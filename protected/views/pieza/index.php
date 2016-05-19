@@ -1,9 +1,3 @@
-<?php 
-if (Yii::app()->user->isGuest) {
-  $this->redirect(array('site/login'));
-  Yii::app()->end();
-}
-?>
 <?php
 /* @var $this PiezaController */
 /* @var $dataProvider CActiveDataProvider */

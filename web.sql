@@ -47,8 +47,8 @@ ENGINE = InnoDB;
 --
 
 INSERT INTO `cliente` (`id`, `nombre`, `apellido1`, `apellido2`, `telefono`, `codigo_postal`, `email`, `fecha_creacion`, `fecha_modifiacion`, `password`, `vivo`, `imagen`, `codigo_activacion`, `activado`, `username`) VALUES
-(1, 'luis', 'mi', 'guel', 913333333, 28033, 'luis.proyectoaplicaciones@gmail.com', '2016-01-10 00:00:00', '2016-05-14 16:44:59', 'luis', 1, '', 'asdfasdf12341234', 0, 'luis'),
-(2, 'admin', 'admin', 'admin', 9, 9, 'admin@admin.es', '2016-01-10 00:00:00', '2016-01-10 00:00:00', '1234', 1, '', 'adminadmin', 0, 'admin');
+(2, '', '', '', 913333333, 28033, '', '2016-01-10 00:00:00', '2016-01-10 00:00:00', 'e0f6027174679fa6707768654fe17896072953a44d72def1c4b6cd015575338938757090db978df3ff79187ad411f827eb9e90e169ed8d26a1f64c2c7e40389c', 1, '', 'asdfasdf', 0, 'luis'),
+(1, '', '', '', 913333333, 28033, '', '2016-01-10 00:00:00', '2016-01-10 00:00:00', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', 1, '', 'adminadmin', 0, 'admin');
 
 
 -- -----------------------------------------------------
