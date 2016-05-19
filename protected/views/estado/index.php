@@ -1,4 +1,3 @@
-?>
 <?php
 /* @var $this EstadoController */
 /* @var $dataProvider CActiveDataProvider */
