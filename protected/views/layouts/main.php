@@ -42,7 +42,7 @@
                             array('label' => 'Manos', 'url' => array('/mano'), 'visible' => Yii::app()->user->getName() == 'admin'),
                             array('label' => 'Marcas', 'url' => array('/marcaPieza'), 'visible' => Yii::app()->user->getName() == 'admin'),
                             array('label' => 'Calendario', 'url' => array('/calendario')),
-                            array('label' => 'Registro', 'url' => array('/registro/index'), 'visible'=>Yii::app()->user->isGuest),
+                            array('label' => 'Registro', 'url' => array('/registro/create'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
