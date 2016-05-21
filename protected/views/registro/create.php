@@ -2,17 +2,21 @@
 /* @var $this RegistroController */
 /* @var $model Registro */
 
+if (!Yii::app()->user->isGuest) {
+  $this->redirect('/web');
+}
+
 $this->breadcrumbs=array(
-	'Registros'=>array('index'),
-	'Create',
+	'Registro',
+	'Crear',
 );
 
-$this->menu=array(
-	array('label'=>'List Registro', 'url'=>array('index')),
-	array('label'=>'Manage Registro', 'url'=>array('admin')),
-);
+//$this->menu=array(
+//	array('label'=>'List Registro', 'url'=>array('index')),
+//	array('label'=>'Manage Registro', 'url'=>array('admin')),
+//);
 ?>
 
-<h1>Create Registro</h1>
+<h1>Crear Registro</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
