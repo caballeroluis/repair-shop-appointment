@@ -57,6 +57,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
                             '' => 'site',
                             '/registro' => 'registro/create',
+                            '/calendario' => 'calendario/index',
 			),
 		),
 		
