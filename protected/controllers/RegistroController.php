@@ -76,7 +76,7 @@ class RegistroController extends Controller
 			$model->attributes=$_POST['Registro'];
 			if($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
-                        }
+		}
 		}
 
 		$this->render('create',array(
