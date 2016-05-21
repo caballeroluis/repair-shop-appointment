@@ -1589,3 +1589,857 @@ Stack trace:
 REQUEST_URI=/web/marcaPieza
 HTTP_REFERER=http://localhost/web/mano
 ---
+2016/05/20 22:24:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('cliente')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/cliente
+HTTP_REFERER=http://localhost/web/admin
+---
+2016/05/20 22:24:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('otro')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/otro
+HTTP_REFERER=http://localhost/web/admin
+---
+2016/05/20 22:24:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('pieza')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/pieza
+HTTP_REFERER=http://localhost/web/admin
+---
+2016/05/20 22:49:19 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.isAdmin" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CWebUser.php(146): CComponent->__get('isAdmin')
+#1 C:\xampp\htdocs\web\protected\views\layouts\main.php(36): CWebUser->__get('isAdmin')
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\web\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\web\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\web\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\web\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\web\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\web\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\web\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#20 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/site
+HTTP_REFERER=http://localhost/web/site/login
+---
+2016/05/20 22:49:21 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.isAdmin" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CWebUser.php(146): CComponent->__get('isAdmin')
+#1 C:\xampp\htdocs\web\protected\views\layouts\main.php(36): CWebUser->__get('isAdmin')
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\web\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\web\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\web\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\web\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\web\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\web\protected\controllers\SiteController.php(98): CController->render('login', Array)
+#14 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#15 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\web\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('login')
+#19 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#20 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/site/login
+HTTP_REFERER=http://localhost/web/admin
+---
+2016/05/20 22:49:27 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.isAdmin" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CWebUser.php(146): CComponent->__get('isAdmin')
+#1 C:\xampp\htdocs\web\protected\views\layouts\main.php(36): CWebUser->__get('isAdmin')
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\web\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\web\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\web\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\web\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\web\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\web\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\web\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('index')
+#19 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#20 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/admin
+HTTP_REFERER=http://localhost/web/calendario
+---
+2016/05/20 22:53:10 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.isAdminUser" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CWebUser.php(146): CComponent->__get('isAdminUser')
+#1 C:\xampp\htdocs\web\protected\views\layouts\main.php(36): CWebUser->__get('isAdminUser')
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\web\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\web\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\web\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\web\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\web\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\web\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\web\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('index')
+#19 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#20 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/admin
+HTTP_REFERER=http://localhost/web/calendario
+---
+2016/05/20 23:19:44 [error] [php] Illegal offset type in isset or empty (C:\xampp\htdocs\web\framework\web\auth\CWebUser.php:812)
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#2 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#3 C:\xampp\htdocs\web\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#4 C:\xampp\htdocs\web\framework\web\CBaseController.php(214): CContentDecorator->run()
+#5 C:\xampp\htdocs\web\framework\web\CBaseController.php(308): SiteController->endWidget()
+#6 C:\xampp\htdocs\web\protected\views\layouts\column1.php(6): SiteController->endContent()
+#7 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require()
+#8 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#9 C:\xampp\htdocs\web\framework\web\CController.php(784): SiteController->renderFile()
+#10 C:\xampp\htdocs\web\protected\controllers\SiteController.php(32): SiteController->render()
+#11 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#12 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\xampp\htdocs\web\framework\web\CController.php(286): SiteController->runAction()
+#14 C:\xampp\htdocs\web\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#15 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): SiteController->run()
+#16 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/web/admin
+in C:\xampp\htdocs\web\protected\views\layouts\main.php (36)
+in C:\xampp\htdocs\web\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\web\protected\controllers\SiteController.php (32)
+2016/05/20 23:21:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('cliente')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/cliente
+HTTP_REFERER=http://localhost/web/admin
+---
+2016/05/20 23:26:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cilente/index".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('cilente/index')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/cilente/index
+---
+2016/05/20 23:26:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('cliente')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/cliente/
+---
+2016/05/20 23:27:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('cliente')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/cliente/
+---
+2016/05/21 10:57:37 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.cliente" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\base\CModule.php(105): CComponent->__get('cliente')
+#1 C:\xampp\htdocs\web\protected\views\layouts\main.php(36): CModule->__get('cliente')
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\web\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\web\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\web\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\web\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\web\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\web\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\web\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#20 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/site
+HTTP_REFERER=http://localhost/web/otro
+---
+2016/05/21 10:57:46 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.cliente" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\base\CModule.php(105): CComponent->__get('cliente')
+#1 C:\xampp\htdocs\web\protected\views\layouts\main.php(36): CModule->__get('cliente')
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\web\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\web\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\web\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\web\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\web\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\web\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\web\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#20 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/site
+HTTP_REFERER=http://localhost/web/otro
+---
+2016/05/21 11:01:02 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.cliente" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\base\CModule.php(105): CComponent->__get('cliente')
+#1 C:\xampp\htdocs\web\protected\views\layouts\main.php(36): CModule->__get('cliente')
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="spa...')
+#6 C:\xampp\htdocs\web\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="spa...')
+#7 C:\xampp\htdocs\web\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\web\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\web\protected\views\layouts\column2.php(22): CBaseController->endContent()
+#10 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\web\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\web\protected\controllers\OtroController.php(130): CController->render('index', Array)
+#14 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): OtroController->actionIndex()
+#15 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#24 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('otro')
+#25 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/web/otro
+HTTP_REFERER=http://localhost/web/admin
+---
+2016/05/21 11:01:05 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.cliente" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\base\CModule.php(105): CComponent->__get('cliente')
+#1 C:\xampp\htdocs\web\protected\views\layouts\main.php(36): CModule->__get('cliente')
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\web\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\web\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\web\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\web\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\web\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\web\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\web\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('index')
+#19 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#20 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/admin
+HTTP_REFERER=http://localhost/web/
+---
+2016/05/21 11:01:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contact".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('contact')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/contact
+---
+2016/05/21 11:01:16 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.cliente" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\base\CModule.php(105): CComponent->__get('cliente')
+#1 C:\xampp\htdocs\web\protected\views\layouts\main.php(36): CModule->__get('cliente')
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\web\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\web\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\web\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\web\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\web\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\web\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\web\protected\controllers\SiteController.php(72): CController->render('contact', Array)
+#14 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionContact()
+#15 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\web\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('contact')
+#19 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site/contact')
+#20 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/site/contact
+---
+2016/05/21 11:02:08 [error] [php] Object of class CWebUser could not be converted to string (C:\xampp\htdocs\web\protected\views\site\contact.php:87)
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\web\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\xampp\htdocs\web\protected\controllers\SiteController.php(72): SiteController->render()
+#3 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionContact()
+#4 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\web\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/web/site/contact
+in C:\xampp\htdocs\web\protected\views\site\contact.php (87)
+in C:\xampp\htdocs\web\protected\controllers\SiteController.php (72)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/21 11:04:12 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "getNumber".' in C:\xampp\htdocs\web\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\web\protected\views\site\contact.php(87): CComponent->__call('getNumber', Array)
+#1 C:\xampp\htdocs\web\protected\views\site\contact.php(87): CWebUser->getNumber()
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\web\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\web\framework\web\CController.php(782): CController->renderPartial('contact', Array, true)
+#6 C:\xampp\htdocs\web\protected\controllers\SiteController.php(72): CController->render('contact', Array)
+#7 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionContact()
+#8 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\web\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('contact')
+#12 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site/contact')
+#13 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/web/site/contact
+---
+2016/05/21 11:07:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "handicaps".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicaps')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/handicaps
+---
+2016/05/21 11:07:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/handicap
+---
+2016/05/21 11:09:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "handicaps".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicaps')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/handicaps
+---
+2016/05/21 11:09:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "handicaps".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicaps')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/handicaps
+---
+2016/05/21 11:09:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/handicap
+---
+2016/05/21 11:09:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/handicap
+---
+2016/05/21 11:25:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/handicap
+HTTP_REFERER=http://localhost/web/site/login
+---
+2016/05/21 13:27:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:28:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:28:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:28:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:28:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:29:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:29:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:29:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:29:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:30:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:31:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:31:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:33:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:33:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:33:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:33:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:33:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:33:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:34:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:34:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:34:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:35:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:36:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:36:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:38:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/registro.js".' in C:\xampp\htdocs\web\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/registro...')
+#1 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/web/assets/registro.js
+HTTP_REFERER=http://localhost/web/registro
+---
+2016/05/21 13:45:04 [error] [php] Undefined variable: model (C:\xampp\htdocs\web\protected\views\registro\index.php:31)
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(869): RegistroController->renderFile()
+#1 C:\xampp\htdocs\web\framework\web\CController.php(782): RegistroController->renderPartial()
+#2 C:\xampp\htdocs\web\protected\controllers\RegistroController.php(10): RegistroController->render()
+#3 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): RegistroController->actionIndex()
+#4 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\web\framework\web\CController.php(286): RegistroController->runAction()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): RegistroController->runActionWithFilters()
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): RegistroController->run()
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/web/registro
+in C:\xampp\htdocs\web\protected\views\registro\index.php (31)
+in C:\xampp\htdocs\web\protected\controllers\RegistroController.php (10)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/21 13:45:21 [error] [php] Undefined variable: model (C:\xampp\htdocs\web\protected\views\registro\index.php:24)
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(869): RegistroController->renderFile()
+#1 C:\xampp\htdocs\web\framework\web\CController.php(782): RegistroController->renderPartial()
+#2 C:\xampp\htdocs\web\protected\controllers\RegistroController.php(10): RegistroController->render()
+#3 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): RegistroController->actionIndex()
+#4 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\web\framework\web\CController.php(286): RegistroController->runAction()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): RegistroController->runActionWithFilters()
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): RegistroController->run()
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/web/registro
+in C:\xampp\htdocs\web\protected\views\registro\index.php (24)
+in C:\xampp\htdocs\web\protected\controllers\RegistroController.php (10)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/21 13:46:54 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.pageTittle" is not defined.' in C:\xampp\htdocs\web\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\base\CModule.php(105): CComponent->__get('pageTittle')
+#1 C:\xampp\htdocs\web\protected\views\calendario\index.php(9): CModule->__get('pageTittle')
+#2 C:\xampp\htdocs\web\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\web\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\web\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\web\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#6 C:\xampp\htdocs\web\protected\controllers\CalendarioController.php(10): CController->render('index')
+#7 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): CalendarioController->actionIndex()
+#8 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\web\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#12 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('calendario')
+#13 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/web/calendario
+HTTP_REFERER=http://localhost/web/calendario
+---
+2016/05/21 13:48:14 [error] [php] Undefined variable: model (C:\xampp\htdocs\web\protected\views\registro\index.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(869): RegistroController->renderFile()
+#1 C:\xampp\htdocs\web\framework\web\CController.php(782): RegistroController->renderPartial()
+#2 C:\xampp\htdocs\web\protected\controllers\RegistroController.php(10): RegistroController->render()
+#3 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): RegistroController->actionIndex()
+#4 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\web\framework\web\CController.php(286): RegistroController->runAction()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): RegistroController->runActionWithFilters()
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): RegistroController->run()
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/web/registro
+in C:\xampp\htdocs\web\protected\views\registro\index.php (18)
+in C:\xampp\htdocs\web\protected\controllers\RegistroController.php (10)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/21 13:48:46 [error] [php] Undefined variable: model (C:\xampp\htdocs\web\protected\views\registro\index.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(869): RegistroController->renderFile()
+#1 C:\xampp\htdocs\web\framework\web\CController.php(782): RegistroController->renderPartial()
+#2 C:\xampp\htdocs\web\protected\controllers\RegistroController.php(10): RegistroController->render()
+#3 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): RegistroController->actionIndex()
+#4 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\web\framework\web\CController.php(286): RegistroController->runAction()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): RegistroController->runActionWithFilters()
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): RegistroController->run()
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/web/registro
+in C:\xampp\htdocs\web\protected\views\registro\index.php (18)
+in C:\xampp\htdocs\web\protected\controllers\RegistroController.php (10)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/21 13:49:32 [error] [php] Undefined variable: model (C:\xampp\htdocs\web\protected\views\registro\index.php:30)
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(869): RegistroController->renderFile()
+#1 C:\xampp\htdocs\web\framework\web\CController.php(782): RegistroController->renderPartial()
+#2 C:\xampp\htdocs\web\protected\controllers\RegistroController.php(10): RegistroController->render()
+#3 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): RegistroController->actionIndex()
+#4 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\web\framework\web\CController.php(286): RegistroController->runAction()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): RegistroController->runActionWithFilters()
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): RegistroController->run()
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/web/registro
+in C:\xampp\htdocs\web\protected\views\registro\index.php (30)
+in C:\xampp\htdocs\web\protected\controllers\RegistroController.php (10)
+in C:\xampp\htdocs\web\index.php (13)

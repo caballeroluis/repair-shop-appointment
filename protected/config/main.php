@@ -8,7 +8,7 @@ Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 return array(
     
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Citas\' back-end',
+	'name'=>'Citas taller',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -55,10 +55,7 @@ return array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-                            '' => 'calendario/index',
-                            '/calendario' => '/calendario/index',
-//                            'registro' => 'registro/index',
-                            'admin' => 'site/index',
+                            '' => 'site',
 			),
 		),
 		

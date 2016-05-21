@@ -3,7 +3,7 @@
 class CalendarioController extends Controller
 {
     
-    public $layout = "//layouts/front";
+    public $layout = "//layouts/main";
     
 	public function actionIndex()
 	{
