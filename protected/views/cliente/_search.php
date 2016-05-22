@@ -52,8 +52,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'fecha_modifiacion'); ?>
-		<?php echo $form->textField($model,'fecha_modifiacion'); ?>
+		<?php echo $form->label($model,'fecha_modificacion'); ?>
+		<?php echo $form->textField($model,'fecha_modificacion'); ?>
 	</div>
 
 	<div class="row">

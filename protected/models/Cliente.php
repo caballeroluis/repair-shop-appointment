@@ -12,7 +12,7 @@
  * @property integer $codigo_postal
  * @property string $email
  * @property string $fecha_creacion
- * @property string $fecha_modifiacion
+ * @property string $fecha_modificacion
  * @property string $password
  * @property integer $vivo
  * @property string $imagen
@@ -46,10 +46,10 @@ class Cliente extends CActiveRecord
 			array('nombre, apellido1, apellido2', 'length', 'max'=>45),
 			array('email, username', 'length', 'max'=>128),
 			array('password, imagen, codigo_activacion', 'length', 'max'=>255),
-			array('fecha_modifiacion', 'safe'),
+			array('fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, apellido1, apellido2, telefono, codigo_postal, email, fecha_creacion, fecha_modifiacion, password, vivo, imagen, codigo_activacion, activado, username', 'safe', 'on'=>'search'),
+			array('id, nombre, apellido1, apellido2, telefono, codigo_postal, email, fecha_creacion, fecha_modificacion, password, vivo, imagen, codigo_activacion, activado, username', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -79,7 +79,7 @@ class Cliente extends CActiveRecord
 			'codigo_postal' => 'Codigo Postal',
 			'email' => 'Email',
 			'fecha_creacion' => 'Fecha Creacion',
-			'fecha_modifiacion' => 'Fecha Modifiacion',
+			'fecha_modificacion' => 'Fecha Modificacion',
 			'password' => 'Password',
 			'vivo' => 'Vivo',
 			'imagen' => 'Imagen',
@@ -115,7 +115,7 @@ class Cliente extends CActiveRecord
 		$criteria->compare('codigo_postal',$this->codigo_postal);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
-		$criteria->compare('fecha_modifiacion',$this->fecha_modifiacion,true);
+		$criteria->compare('fecha_modificacion',$this->fecha_modificacion,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('vivo',$this->vivo);
 		$criteria->compare('imagen',$this->imagen,true);

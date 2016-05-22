@@ -38,8 +38,8 @@
 	<?php echo CHtml::encode($data->fecha_creacion); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_modifiacion')); ?>:</b>
-	<?php echo CHtml::encode($data->fecha_modifiacion); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_modificacion')); ?>:</b>
+	<?php echo CHtml::encode($data->fecha_modificacion); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('password')); ?>:</b>
