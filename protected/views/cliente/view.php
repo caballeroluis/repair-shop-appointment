@@ -29,11 +29,12 @@ $this->menu=array(
 		'codigo_postal',
 		'email',
 		'fecha_creacion',
-		'fecha_modifiacion',
+		'fecha_modificacion',
 		'password',
 		'vivo',
 		'imagen',
 		'codigo_activacion',
 		'activado',
+		'username',
 	),
 )); ?>

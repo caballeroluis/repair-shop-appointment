@@ -30,11 +30,21 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Home', 'url'=>array('/site')),
+//				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+//				array('label'=>'Contact', 'url'=>array('/site/contact')),
+                            array('label' => 'Clientes', 'url' => array('/cliente'), 'visible' => Yii::app()->user->getName() == 'admin'),
+                            array('label' => 'Citas', 'url' => array('/cita'), 'visible' => Yii::app()->user->getName() == 'admin'),
+                            array('label' => 'Estados', 'url' => array('/estado'), 'visible' => Yii::app()->user->getName() == 'admin'),
+                            array('label' => 'Otros', 'url' => array('/otro'), 'visible' => Yii::app()->user->getName() == 'admin'),
+                            array('label' => 'Handicaps', 'url' => array('/handicap'), 'visible' => Yii::app()->user->getName() == 'admin'),
+                            array('label' => 'Piezas', 'url' => array('/pieza'), 'visible' => Yii::app()->user->getName() == 'admin'),
+                            array('label' => 'Manos', 'url' => array('/mano'), 'visible' => Yii::app()->user->getName() == 'admin'),
+                            array('label' => 'Marcas', 'url' => array('/marcaPieza'), 'visible' => Yii::app()->user->getName() == 'admin'),
+                            array('label' => 'Calendario', 'url' => array('/calendario')),
+                            array('label' => 'Registro', 'url' => array('/registro/create'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
 		)); ?>
 	</div><!-- mainmenu -->
@@ -49,7 +59,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by Luis.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->

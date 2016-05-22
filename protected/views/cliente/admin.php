@@ -54,12 +54,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		/*
 		'email',
 		'fecha_creacion',
-		'fecha_modifiacion',
+		'fecha_modificacion',
 		'password',
 		'vivo',
 		'imagen',
 		'codigo_activacion',
 		'activado',
+		'username',
 		*/
 		array(
 			'class'=>'CButtonColumn',

@@ -52,8 +52,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'fecha_modifiacion'); ?>
-		<?php echo $form->textField($model,'fecha_modifiacion'); ?>
+		<?php echo $form->label($model,'fecha_modificacion'); ?>
+		<?php echo $form->textField($model,'fecha_modificacion'); ?>
 	</div>
 
 	<div class="row">
@@ -74,6 +74,11 @@
 	<div class="row">
 		<?php echo $form->label($model,'activado'); ?>
 		<?php echo $form->textField($model,'activado'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>128)); ?>
 	</div>
 
 	<div class="row buttons">

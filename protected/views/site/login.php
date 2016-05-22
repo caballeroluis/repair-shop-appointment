@@ -1,4 +1,8 @@
 <?php
+if (!Yii::app()->user->isGuest){
+  $this->redirect('/web');
+}
+
 /* @var $this SiteController */
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */

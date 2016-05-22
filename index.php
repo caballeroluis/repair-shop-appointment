@@ -11,3 +11,11 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 require_once($yii);
 Yii::createWebApplication($config)->run();
+
+//hacer: comenta la línea 8 en producción
+
+//if (Yii::app()->user->getName() == 'admin') {
+//  defined('YII_DEBUG') or define('YII_DEBUG',true);
+//} else {
+//  defined('YII_DEBUG') or define('YII_DEBUG',false);
+//}

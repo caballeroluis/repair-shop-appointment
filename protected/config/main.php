@@ -1,26 +1,20 @@
 <?php
-Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 // uncomment the following to define a path alias
-Yii::setPathOfAlias('local', dirname(__FILE__).'../../');
+//Yii::setPathOfAlias('local', dirname(__FILE__).'../../');
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
   
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-    'theme'=>'bootstrap',
-    'modules'=>array(
-        'gii'=>array(
-            'generatorPaths'=>array(
-                'bootstrap.gii',
-            ),                      
-        ),
-    ),
     
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'Citas taller',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
-
+        
+        'theme'=>'bootstrap',
+    
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
@@ -31,6 +25,9 @@ return array(
 		// uncomment the following to enable the Gii tool
 		
 		'gii'=>array(
+                        'generatorPaths'=>array(
+                          'bootstrap.gii',
+                        ),
 			'class'=>'system.gii.GiiModule',
 			'password'=>'1234',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
@@ -50,16 +47,20 @@ return array(
 		),
 
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+                      'showScriptName' => false,
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                            '' => 'site',
+                            '/registro' => 'registro/create',
+                            '/calendario' => 'calendario/index',
 			),
 		),
-		*/
+		
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
@@ -91,6 +92,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'luis.proyectoapliaciones@gmail.com',
 	),
 );

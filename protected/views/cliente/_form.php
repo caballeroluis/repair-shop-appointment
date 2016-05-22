@@ -62,9 +62,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'fecha_modifiacion'); ?>
-		<?php echo $form->textField($model,'fecha_modifiacion'); ?>
-		<?php echo $form->error($model,'fecha_modifiacion'); ?>
+		<?php echo $form->labelEx($model,'fecha_modificacion'); ?>
+		<?php echo $form->textField($model,'fecha_modificacion'); ?>
+		<?php echo $form->error($model,'fecha_modificacion'); ?>
 	</div>
 
 	<div class="row">
@@ -95,6 +95,12 @@
 		<?php echo $form->labelEx($model,'activado'); ?>
 		<?php echo $form->textField($model,'activado'); ?>
 		<?php echo $form->error($model,'activado'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'username'); ?>
 	</div>
 
 	<div class="row buttons">
