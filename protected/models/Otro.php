@@ -30,7 +30,7 @@ class Otro extends CActiveRecord
 		return array(
 			array('nombre, fecha_creacion', 'required'),
 			array('vivo', 'numerical', 'integerOnly'=>true),
-			array('nombre, valor', 'length', 'max'=>45),
+			array('nombre, valor', 'length', 'max'=>255),
 			array('fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
