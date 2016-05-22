@@ -23,7 +23,7 @@ class Registro extends CFormModel {
 
     return array(
         array('nombre, codigo_postal, email, fecha_creacion, password, codigo_activacion, username', 'required', 'message' => 'Este campo es obligatorio'),
-        array('telefono, codigo_postal, vivo, activado', 'numerical', 'integerOnly' => true),
+        array('telefono, codigo_postal, vivo, activado', 'numerical', 'integerOnly' => true, 'message' => 'Campo nummérico'),
         array('nombre, apellido1, apellido2', 'length', 'max' => 45, 'tooLong' => 'Máximo 45 caracteres'),
         array('email, username', 'length', 'max' => 128, 'tooLong' => 'Máximo 128 caracteres'),
         array('password, imagen, codigo_activacion', 'length', 'max' => 255, 'tooLong' => 'Máximo 255 caracteres'),
@@ -42,26 +42,38 @@ class Registro extends CFormModel {
             'email',
             'message' => 'El formato de email introducido no es correcto',
         ),
-//                    array(
-//                      'password',
-//                      'match',
-//                      'pattern' => '/^.*(?=.{8,16})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/',
-//                      'message' => 'Obligatorio legras y números. Símbolos: !#$%&? "',
-//                      'min' => 8,
-//                      'tooShort' => 'Mímimo 8 caracteres',
-//                      'max' => 16,
-//                      'tooLong' => 'Máximo 16 caracteres'
-//                    ),
+        array(
+          'password',
+          'match',
+          'pattern' => '/^.*(?=.{8,16})(?=.*[a-zA-Z])(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!#$%&? |\'\/"çªº`@^*_+=-¿¡;:,.\<\>\{\}\[\]]).*$/',
+          'message' => 'Obligatorio letras (mayúsculas y minúsculas), números, algún símbolo y más de 8 caracteres',
+        ),
+        array(
+          'repetir_password',
+          'match',
+          'pattern' => '/^.*(?=.{8,16})(?=.*[a-zA-Z])(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!#$%&? |\'\/"çªº`@^*_+=-¿¡;:,.\<\>\{\}\[\]]).*$/',
+          'message' => 'Obligatorio letras (mayúsculas y minúsculas), números, algún símbolo y más de 8 caracteres',
+        ),
         array(
             'repetir_password',
             'compare',
             'compareAttribute' => 'password',
             'message' => 'Las contraseñas no coinciden',
+        )
+        ,array(
+          'codigo_postal',
+          'length', 'max' => 5,
+        ),
+        array(
+          'codigo_postal',
+          'match',
+          'pattern' => '/^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$/',
+          'message' => 'Código postal inválido',
         ),
         array(
             'terminos',
             'required',
-            'message' => 'Por favor, acepte los términos'
+            'message' => 'Por favor, debe aceptar los términos y condiciones del servicio marcando la casilla.'
         ),
     );
   }

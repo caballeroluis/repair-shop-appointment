@@ -67,67 +67,41 @@ $this->breadcrumbs = array(
   </div>
 
   <div class="row">
-    <?php echo $form->labelEx($model, 'apellido1'); ?>
+    <?php echo $form->labelEx($model, 'Pimer apellido'); ?>
     <?php echo $form->textField($model, 'apellido1', array('size' => 45, 'maxlength' => 45)); ?>
     <?php echo $form->error($model, 'apellido1'); ?>
   </div>
 
   <div class="row">
-    <?php echo $form->labelEx($model, 'apellido2'); ?>
+    <?php echo $form->labelEx($model, 'Segundo apellido'); ?>
     <?php echo $form->textField($model, 'apellido2', array('size' => 45, 'maxlength' => 45)); ?>
     <?php echo $form->error($model, 'apellido2'); ?>
   </div>
 
   <div class="row">
-    <?php echo $form->labelEx($model, 'telefono'); ?>
+    <?php echo $form->labelEx($model, 't&eacute;lefono'); ?>
     <?php echo $form->textField($model, 'telefono'); ?>
     <?php echo $form->error($model, 'telefono'); ?>
   </div>
 
   <div class="row">
-    <?php echo $form->labelEx($model, 'fecha_creacion'); ?>
-    <?php echo $form->textField($model, 'fecha_creacion'); ?>
-    <?php echo $form->error($model, 'fecha_creacion'); ?>
-  </div>
-
-  <div class="row">
-    <?php echo $form->labelEx($model, 'fecha_modificacion'); ?>
-    <?php echo $form->textField($model, 'fecha_modificacion'); ?>
-    <?php echo $form->error($model, 'fecha_modificacion'); ?>
-  </div>
-
-  <div class="row">
-    <?php echo $form->labelEx($model, 'vivo'); ?>
-    <?php echo $form->textField($model, 'vivo'); ?>
-    <?php echo $form->error($model, 'vivo'); ?>
-  </div>
-
-  <div class="row">
-    <?php echo $form->labelEx($model, 'imagen'); ?>
-    <?php echo $form->textField($model, 'imagen', array('size' => 60, 'maxlength' => 255)); ?>
-    <?php echo $form->error($model, 'imagen'); ?>
-  </div>
-
-  <div class="row">
-    <?php echo $form->labelEx($model, 'codigo_activacion'); ?>
-    <?php echo $form->textField($model, 'codigo_activacion', array('size' => 60, 'maxlength' => 255)); ?>
-    <?php echo $form->error($model, 'codigo_activacion'); ?>
-  </div>
-
-  <div class="row">
-    <?php echo $form->labelEx($model, 'activado'); ?>
-    <?php echo $form->textField($model, 'activado'); ?>
-    <?php echo $form->error($model, 'activado'); ?>
-  </div>
-
-  <div class="row">
     <?php
-    echo $form->labelEx($model, 'Terminos y condiciones');
+    echo $form->labelEx($model, 'Acepto:<a title="Más información aquí" id="terminos">T&eacute;rminos y condiciones</a>&nbsp;&nbsp;', array('style' => 'display:inline'));
     echo $form->checkBox($model, 'terminos', array('style' => 'display:inline'));
     echo $form->error($model, 'terminos');
     ?>
   </div>
-
+  
+  <div class="row">
+    <div class="span10">
+      <div id="div-terminos" style="display: none" class="alert alert-info">
+        <?php
+        print_r(CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'terminos'))['valor']);
+        ?>
+      </div>
+    </div>
+  </div>
+  
   <div class="row buttons">
     <?php
     echo CHtml::submitButton('Crear');
@@ -135,7 +109,20 @@ $this->breadcrumbs = array(
   </div>
 
   <?php $this->endWidget(); ?>
+  
+
+  <div class="row">
+    <div class="span10">
+      <div id="div-lopd" class="alert alert-info">
+        <?php
+        print_r(CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'lopd'))['valor']);
+        ?>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 <script src="/web/js/registroCreate.js" type="text/javascript"></script>
 <script src="/web/js/encriptarSHA.js" type="text/javascript"></script>
 <script src="/web/protected/extensions/jsSHA/src/sha.js" type="text/javascript"></script>

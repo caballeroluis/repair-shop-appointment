@@ -167,7 +167,7 @@ DROP TABLE IF EXISTS `web`.`otro` ;
 
 CREATE TABLE IF NOT EXISTS `web`.`otro` (
   `nombre` VARCHAR(45) NOT NULL,
-  `valor` VARCHAR(45) NULL COMMENT 'por ejemplo para guardar el iva actual',
+  `valor` VARCHAR(255) NULL COMMENT 'por ejemplo para guardar el iva actual',
   `vivo` TINYINT(1) NOT NULL DEFAULT 1,
   `fecha_creacion` DATETIME NOT NULL,
   `fecha_modificacion` DATETIME NULL,
@@ -258,8 +258,6 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 
-
-
 --
 -- Volcado de datos para la tabla `cliente`
 --
@@ -267,4 +265,17 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 INSERT INTO `cliente` (`id`, `nombre`, `apellido1`, `apellido2`, `telefono`, `codigo_postal`, `email`, `fecha_creacion`, `fecha_modificacion`, `password`, `vivo`, `imagen`, `codigo_activacion`, `activado`, `username`) VALUES
 (2, 'luis', '', '', 913333333, 28033, 'luis@luis.es', '2016-01-10 00:00:00', '2016-01-10 00:00:00', 'e0f6027174679fa6707768654fe17896072953a44d72def1c4b6cd015575338938757090db978df3ff79187ad411f827eb9e90e169ed8d26a1f64c2c7e40389c', 1, '', 'asdfasdf', 0, 'luis'),
 (1, 'admin', '', '', 913333333, 28033, 'admin@admin.es', '2016-01-10 00:00:00', '2016-01-10 00:00:00', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', 1, '', 'adminadmin', 0, 'admin');
+
+--
+-- Volcado de datos para la tabla `otro`
+--
+
+INSERT INTO `otro` (`nombre`, `valor`, `vivo`, `fecha_creacion`, `fecha_modificacion`) VALUES
+('iva', 21, 1, '2016-01-10 00:00:00', '2016-01-10 00:00:00'),
+('terminos',
+'Términos y condiciones:<br />Pendiente de redactar los términos y condiciones del servicio.<br />Por favor, consulte con el administrador. Administrador, consulte la tabla otros para editar este mensaje.',
+1, '2016-01-10 00:00:00', '2016-01-10 00:00:00'),
+('lopd',
+'Administrador, por favor consulte la tabla otros para editar este mensaje y redactar el aviso de la protección de datos.',
+1, '2016-01-10 00:00:00', '2016-01-10 00:00:00');;
 
