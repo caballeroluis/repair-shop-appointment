@@ -34,7 +34,7 @@ class Registro extends CFormModel {
         array(
             'nombre',
             'match',
-            'pattern' => '/^[a-záéíóúñàèìòùäëïöüç\s]+$/i',
+            'pattern' => '/^[a-z0-9áéíóúñàèìòùäëïöüç\s]+$/i',
             'message' => 'El tipo de datos introducido es incorrecto'
         ),
         array(
