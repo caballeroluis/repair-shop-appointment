@@ -1,3 +1,4 @@
 nbproject/*
+nbproject/private/private.xml
 assets/*
 protected/runtime/*
