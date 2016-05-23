@@ -276,6 +276,8 @@ INSERT INTO `cliente` (`id`, `nombre`, `apellido1`, `apellido2`, `telefono`, `co
 (2, 'luis', '', '', 913333333, 28033, 'luis@luis.es', '2016-01-10 00:00:00', '2016-01-10 00:00:00', 'e0f6027174679fa6707768654fe17896072953a44d72def1c4b6cd015575338938757090db978df3ff79187ad411f827eb9e90e169ed8d26a1f64c2c7e40389c', 1, '', 'asdfasdf', 0, 'luis', ''),
 (1, 'admin', '', '', 913333333, 28033, 'admin@admin.es', '2016-01-10 00:00:00', '2016-01-10 00:00:00', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', 1, '', 'adminadmin', 0, 'admin', 'nunca modificar el username admin');
 
+
+
 --
 -- Volcado de datos para la tabla `otro`
 --
@@ -286,5 +288,12 @@ INSERT INTO `otro` (`nombre`, `valor`, `vivo`, `fecha_creacion`, `fecha_modifica
 'Términos y condiciones:<br />Pendiente de redactar los términos y condiciones del servicio.<br />Por favor, consulte con el administrador. Administrador, consulte la tabla otros para editar este mensaje.',
 1, '2016-01-10 00:00:00', '2016-01-10 00:00:00', 2),
 ('lopd',
-'Administrador, por favor consulte la tabla otros para editar este mensaje y redactar el aviso de la protección de datos.',
+'LOPD. Administrador, por favor consulte la tabla otros para editar este mensaje y redactar el aviso de la protección de datos.',
 1, '2016-01-10 00:00:00', '2016-01-10 00:00:00', 3);
+
+--
+-- Volcado de datos para la tabla `estado`
+--
+
+INSERT INTO `estado` (`id`, `nombre`) VALUES
+(1, 'desatendida');
