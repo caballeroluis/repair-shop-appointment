@@ -23,7 +23,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'recargo'); ?>
-		<?php echo $form->textField($model,'recargo',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'recargo'); ?>
 	</div>
 
 	<div class="row">
@@ -49,6 +49,11 @@
 	<div class="row">
 		<?php echo $form->label($model,'fecha_modificacion'); ?>
 		<?php echo $form->textField($model,'fecha_modificacion'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'observaciones'); ?>
+		<?php echo $form->textField($model,'observaciones',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row buttons">

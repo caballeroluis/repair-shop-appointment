@@ -31,5 +31,6 @@ $this->menu=array(
 		'marca_pieza_id',
 		'imagen',
 		'observaciones',
+		'minutos_instalacion',
 	),
 )); ?>

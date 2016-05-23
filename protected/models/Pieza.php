@@ -14,6 +14,7 @@
  * @property integer $marca_pieza_id
  * @property string $imagen
  * @property string $observaciones
+ * @property integer $minutos_instalacion
  *
  * The followings are the available model relations:
  * @property Cita[] $citas
@@ -37,14 +38,13 @@ class Pieza extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, precio, precio_instalar, fecha_creacion, marca_pieza_id', 'required'),
-			array('precio, precio_instalar, vivo, marca_pieza_id', 'numerical', 'integerOnly'=>true),
+			array('precio, precio_instalar, vivo, marca_pieza_id, minutos_instalacion', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>45),
 			array('imagen, observaciones', 'length', 'max'=>255),
-			array('fecha_modificacion', 'safe'),
+			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, precio, precio_instalar, fecha_creacion, fecha_modificacion, vivo, marca_pieza_id, imagen, observaciones', 'safe', 'on'=>'search'),
+			array('id, nombre, precio, precio_instalar, fecha_creacion, fecha_modificacion, vivo, marca_pieza_id, imagen, observaciones, minutos_instalacion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,7 +56,7 @@ class Pieza extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'citas' => array(self::MANY_MANY, 'Cita', 'cita_has_pieza(pieza_id, cita_fecha_cita)'),
+			'citas' => array(self::MANY_MANY, 'Cita', 'cita_has_pieza(pieza_id, cita_id)'),
 			'marcaPieza' => array(self::BELONGS_TO, 'MarcaPieza', 'marca_pieza_id'),
 		);
 	}
@@ -77,6 +77,7 @@ class Pieza extends CActiveRecord
 			'marca_pieza_id' => 'Marca Pieza',
 			'imagen' => 'Imagen',
 			'observaciones' => 'Observaciones',
+			'minutos_instalacion' => 'Minutos Instalacion',
 		);
 	}
 
@@ -108,6 +109,7 @@ class Pieza extends CActiveRecord
 		$criteria->compare('marca_pieza_id',$this->marca_pieza_id);
 		$criteria->compare('imagen',$this->imagen,true);
 		$criteria->compare('observaciones',$this->observaciones,true);
+		$criteria->compare('minutos_instalacion',$this->minutos_instalacion);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

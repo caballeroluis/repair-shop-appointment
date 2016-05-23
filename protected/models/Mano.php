@@ -12,6 +12,7 @@
  * @property string $fecha_modificacion
  * @property integer $vivo
  * @property string $imagen
+ * @property string $observaciones
  *
  * The followings are the available model relations:
  * @property Cita[] $citas
@@ -34,14 +35,13 @@ class Mano extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, coste, minutos_duracion, fecha_creacion', 'required'),
 			array('coste, minutos_duracion, vivo', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>45),
-			array('imagen', 'length', 'max'=>255),
-			array('fecha_modificacion', 'safe'),
+			array('imagen, observaciones', 'length', 'max'=>255),
+			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, coste, minutos_duracion, fecha_creacion, fecha_modificacion, vivo, imagen', 'safe', 'on'=>'search'),
+			array('id, nombre, coste, minutos_duracion, fecha_creacion, fecha_modificacion, vivo, imagen, observaciones', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,7 +53,7 @@ class Mano extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'citas' => array(self::MANY_MANY, 'Cita', 'cita_has_mano(mano_id, cita_fecha_cita)'),
+			'citas' => array(self::MANY_MANY, 'Cita', 'cita_has_mano(mano_id, cita_id)'),
 		);
 	}
 
@@ -71,6 +71,7 @@ class Mano extends CActiveRecord
 			'fecha_modificacion' => 'Fecha Modificacion',
 			'vivo' => 'Vivo',
 			'imagen' => 'Imagen',
+			'observaciones' => 'Observaciones',
 		);
 	}
 
@@ -100,6 +101,7 @@ class Mano extends CActiveRecord
 		$criteria->compare('fecha_modificacion',$this->fecha_modificacion,true);
 		$criteria->compare('vivo',$this->vivo);
 		$criteria->compare('imagen',$this->imagen,true);
+		$criteria->compare('observaciones',$this->observaciones,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

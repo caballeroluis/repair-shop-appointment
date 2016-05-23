@@ -10,6 +10,7 @@
  * @property integer $vivo
  * @property string $fecha_creacion
  * @property string $fecha_modificacion
+ * @property string $observaciones
  *
  * The followings are the available model relations:
  * @property Pieza[] $piezas
@@ -32,14 +33,13 @@ class MarcaPieza extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, fecha_creacion', 'required'),
 			array('vivo', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>45),
-			array('imagen', 'length', 'max'=>255),
-			array('fecha_modificacion', 'safe'),
+			array('imagen, observaciones', 'length', 'max'=>255),
+			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, imagen, vivo, fecha_creacion, fecha_modificacion', 'safe', 'on'=>'search'),
+			array('id, nombre, imagen, vivo, fecha_creacion, fecha_modificacion, observaciones', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +67,7 @@ class MarcaPieza extends CActiveRecord
 			'vivo' => 'Vivo',
 			'fecha_creacion' => 'Fecha Creacion',
 			'fecha_modificacion' => 'Fecha Modificacion',
+			'observaciones' => 'Observaciones',
 		);
 	}
 
@@ -94,6 +95,7 @@ class MarcaPieza extends CActiveRecord
 		$criteria->compare('vivo',$this->vivo);
 		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
 		$criteria->compare('fecha_modificacion',$this->fecha_modificacion,true);
+		$criteria->compare('observaciones',$this->observaciones,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

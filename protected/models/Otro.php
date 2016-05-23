@@ -9,6 +9,7 @@
  * @property integer $vivo
  * @property string $fecha_creacion
  * @property string $fecha_modificacion
+ * @property integer $id
  */
 class Otro extends CActiveRecord
 {
@@ -28,13 +29,13 @@ class Otro extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, fecha_creacion', 'required'),
 			array('vivo', 'numerical', 'integerOnly'=>true),
-			array('nombre, valor', 'length', 'max'=>255),
-			array('fecha_modificacion', 'safe'),
+			array('nombre', 'length', 'max'=>45),
+			array('valor', 'length', 'max'=>255),
+			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('nombre, valor, vivo, fecha_creacion, fecha_modificacion', 'safe', 'on'=>'search'),
+			array('nombre, valor, vivo, fecha_creacion, fecha_modificacion, id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +61,7 @@ class Otro extends CActiveRecord
 			'vivo' => 'Vivo',
 			'fecha_creacion' => 'Fecha Creacion',
 			'fecha_modificacion' => 'Fecha Modificacion',
+			'id' => 'ID',
 		);
 	}
 
@@ -86,6 +88,7 @@ class Otro extends CActiveRecord
 		$criteria->compare('vivo',$this->vivo);
 		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
 		$criteria->compare('fecha_modificacion',$this->fecha_modificacion,true);
+		$criteria->compare('id',$this->id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -41,6 +41,11 @@
 		<?php echo $form->textField($model,'fecha_modificacion'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'observaciones'); ?>
+		<?php echo $form->textField($model,'observaciones',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

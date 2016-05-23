@@ -36,5 +36,6 @@ $this->menu=array(
 		'codigo_activacion',
 		'activado',
 		'username',
+		'observaciones',
 	),
 )); ?>

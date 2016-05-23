@@ -6,12 +6,13 @@
  * The followings are the available columns in table 'handicap':
  * @property integer $id
  * @property string $nombre
- * @property string $recargo
+ * @property integer $recargo
  * @property integer $minutos_duracion
  * @property string $imagen
  * @property integer $vivo
  * @property string $fecha_creacion
  * @property string $fecha_modificacion
+ * @property string $observaciones
  */
 class Handicap extends CActiveRecord
 {
@@ -31,14 +32,13 @@ class Handicap extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, fecha_creacion', 'required'),
-			array('id, minutos_duracion, vivo', 'numerical', 'integerOnly'=>true),
-			array('nombre, recargo', 'length', 'max'=>45),
-			array('imagen', 'length', 'max'=>255),
-			array('fecha_modificacion', 'safe'),
+			array('recargo, minutos_duracion, vivo', 'numerical', 'integerOnly'=>true),
+			array('nombre', 'length', 'max'=>45),
+			array('imagen, observaciones', 'length', 'max'=>255),
+			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, recargo, minutos_duracion, imagen, vivo, fecha_creacion, fecha_modificacion', 'safe', 'on'=>'search'),
+			array('id, nombre, recargo, minutos_duracion, imagen, vivo, fecha_creacion, fecha_modificacion, observaciones', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +67,7 @@ class Handicap extends CActiveRecord
 			'vivo' => 'Vivo',
 			'fecha_creacion' => 'Fecha Creacion',
 			'fecha_modificacion' => 'Fecha Modificacion',
+			'observaciones' => 'Observaciones',
 		);
 	}
 
@@ -90,12 +91,13 @@ class Handicap extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
-		$criteria->compare('recargo',$this->recargo,true);
+		$criteria->compare('recargo',$this->recargo);
 		$criteria->compare('minutos_duracion',$this->minutos_duracion);
 		$criteria->compare('imagen',$this->imagen,true);
 		$criteria->compare('vivo',$this->vivo);
 		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
 		$criteria->compare('fecha_modificacion',$this->fecha_modificacion,true);
+		$criteria->compare('observaciones',$this->observaciones,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -29,5 +29,6 @@ $this->menu=array(
 		'vivo',
 		'fecha_creacion',
 		'fecha_modificacion',
+		'observaciones',
 	),
 )); ?>

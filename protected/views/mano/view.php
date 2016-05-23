@@ -29,5 +29,6 @@ $this->menu=array(
 		'fecha_modificacion',
 		'vivo',
 		'imagen',
+		'observaciones',
 	),
 )); ?>

@@ -29,13 +29,11 @@ class CitaController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-//				'users'=>array('*'),
-				'users'=>array('admin'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-//				'users'=>array('@'),
-				'users'=>array('admin'),
+				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
@@ -73,7 +71,7 @@ class CitaController extends Controller
 		{
 			$model->attributes=$_POST['Cita'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->fecha_cita));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -97,7 +95,7 @@ class CitaController extends Controller
 		{
 			$model->attributes=$_POST['Cita'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->fecha_cita));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(

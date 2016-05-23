@@ -20,12 +20,6 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-		<?php echo $form->error($model,'id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'nombre'); ?>
 		<?php echo $form->textField($model,'nombre',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'nombre'); ?>
@@ -33,7 +27,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'recargo'); ?>
-		<?php echo $form->textField($model,'recargo',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'recargo'); ?>
 		<?php echo $form->error($model,'recargo'); ?>
 	</div>
 
@@ -65,6 +59,12 @@
 		<?php echo $form->labelEx($model,'fecha_modificacion'); ?>
 		<?php echo $form->textField($model,'fecha_modificacion'); ?>
 		<?php echo $form->error($model,'fecha_modificacion'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'observaciones'); ?>
+		<?php echo $form->textField($model,'observaciones',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'observaciones'); ?>
 	</div>
 
 	<div class="row buttons">

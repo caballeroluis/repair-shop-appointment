@@ -73,6 +73,12 @@
 		<?php echo $form->error($model,'observaciones'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'minutos_instalacion'); ?>
+		<?php echo $form->textField($model,'minutos_instalacion'); ?>
+		<?php echo $form->error($model,'minutos_instalacion'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

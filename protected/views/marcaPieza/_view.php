@@ -29,5 +29,9 @@
 	<?php echo CHtml::encode($data->fecha_modificacion); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('observaciones')); ?>:</b>
+	<?php echo CHtml::encode($data->observaciones); ?>
+	<br />
+
 
 </div>

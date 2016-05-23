@@ -61,6 +61,16 @@
 		<?php echo $form->textField($model,'cliente_id'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'id'); ?>
+		<?php echo $form->textField($model,'id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'prioridad'); ?>
+		<?php echo $form->textField($model,'prioridad'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

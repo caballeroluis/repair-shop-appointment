@@ -4,19 +4,19 @@
 
 $this->breadcrumbs=array(
 	'Citas'=>array('index'),
-	$model->fecha_cita,
+	$model->id,
 );
 
 $this->menu=array(
 	array('label'=>'List Cita', 'url'=>array('index')),
 	array('label'=>'Create Cita', 'url'=>array('create')),
-	array('label'=>'Update Cita', 'url'=>array('update', 'id'=>$model->fecha_cita)),
-	array('label'=>'Delete Cita', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->fecha_cita),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Update Cita', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Cita', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Cita', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Cita #<?php echo $model->fecha_cita; ?></h1>
+<h1>View Cita #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -31,5 +31,7 @@ $this->menu=array(
 		'observaciones',
 		'estado_id',
 		'cliente_id',
+		'id',
+		'prioridad',
 	),
 )); ?>

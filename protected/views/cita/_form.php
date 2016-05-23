@@ -79,6 +79,12 @@
 		<?php echo $form->error($model,'cliente_id'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'prioridad'); ?>
+		<?php echo $form->textField($model,'prioridad'); ?>
+		<?php echo $form->error($model,'prioridad'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

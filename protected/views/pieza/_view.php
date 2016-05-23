@@ -46,6 +46,10 @@
 	<?php echo CHtml::encode($data->observaciones); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('minutos_instalacion')); ?>:</b>
+	<?php echo CHtml::encode($data->minutos_instalacion); ?>
+	<br />
+
 	*/ ?>
 
 </div>

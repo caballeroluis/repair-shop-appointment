@@ -14,6 +14,8 @@
  * @property string $observaciones
  * @property integer $estado_id
  * @property integer $cliente_id
+ * @property integer $id
+ * @property integer $prioridad
  *
  * The followings are the available model relations:
  * @property Cliente $cliente
@@ -39,13 +41,12 @@ class Cita extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fecha_cita, fecha_creacion, cliente_id', 'required'),
-			array('vivo, precio_cal, estado_id, cliente_id', 'numerical', 'integerOnly'=>true),
+			array('vivo, precio_cal, estado_id, cliente_id, prioridad', 'numerical', 'integerOnly'=>true),
 			array('observaciones', 'length', 'max'=>255),
-			array('fecha_modificacion, fecha_cal_recogida, fecha_gusto_recogida', 'safe'),
+			array('fecha_cita, fecha_creacion, fecha_modificacion, fecha_cal_recogida, fecha_gusto_recogida', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('fecha_cita, fecha_creacion, fecha_modificacion, vivo, fecha_cal_recogida, fecha_gusto_recogida, precio_cal, observaciones, estado_id, cliente_id', 'safe', 'on'=>'search'),
+			array('fecha_cita, fecha_creacion, fecha_modificacion, vivo, fecha_cal_recogida, fecha_gusto_recogida, precio_cal, observaciones, estado_id, cliente_id, id, prioridad', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,8 +60,8 @@ class Cita extends CActiveRecord
 		return array(
 			'cliente' => array(self::BELONGS_TO, 'Cliente', 'cliente_id'),
 			'estado' => array(self::BELONGS_TO, 'Estado', 'estado_id'),
-			'manos' => array(self::MANY_MANY, 'Mano', 'cita_has_mano(cita_fecha_cita, mano_id)'),
-			'piezas' => array(self::MANY_MANY, 'Pieza', 'cita_has_pieza(cita_fecha_cita, pieza_id)'),
+			'manos' => array(self::MANY_MANY, 'Mano', 'cita_has_mano(cita_id, mano_id)'),
+			'piezas' => array(self::MANY_MANY, 'Pieza', 'cita_has_pieza(cita_id, pieza_id)'),
 		);
 	}
 
@@ -80,6 +81,8 @@ class Cita extends CActiveRecord
 			'observaciones' => 'Observaciones',
 			'estado_id' => 'Estado',
 			'cliente_id' => 'Cliente',
+			'id' => 'ID',
+			'prioridad' => 'Prioridad',
 		);
 	}
 
@@ -111,6 +114,8 @@ class Cita extends CActiveRecord
 		$criteria->compare('observaciones',$this->observaciones,true);
 		$criteria->compare('estado_id',$this->estado_id);
 		$criteria->compare('cliente_id',$this->cliente_id);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('prioridad',$this->prioridad);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
