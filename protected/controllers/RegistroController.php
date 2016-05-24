@@ -36,41 +36,28 @@ class RegistroController extends Controller
 		);
 	}
         
-  public function actionIndex() { //funcion que pinta la vista y tb guarda las tuplas de los nuevos clentes
+  public function actionIndex() { //funcion que pinta la vista
     $model = new Registro;
-    if(isset($_POST['ajax'])){
-      if ($_POST['ajax'] == 'form1') {
-//        $model->validate();
-        if (CActiveForm::validate($model)) {
-          echo('validado');
-        } else {
-          echo('noValidado');
-        }
-      }
+    $this->render('index', array(
+      'model' => $model,
+    ));
+  }
+  
+  public function actionCreate() { //funcion que guarda las tuplas de los nuevos clentes
+    $model = new Registro;
+    if (isset($_POST['ajax']) && $_POST['ajax'] === 'registro-form') {
+      echo CActiveForm::validate($model);
       Yii::app()->end();
-    } else {
-      $this->render('index', array(
-        'model' => $model,
-      ));
+    }
+    
+    if(isset($_POST['Registro']))
+    {
+        $model->attributes=$_POST['Registro'];
+        if($model->validate()) {
+          echo 'holas';
+          $this->render(array('index', 'id' => $id));
+        }
     }
   }
-
-//  public function actionCreate() {
-//    
-//    
-//    if (isset($_POST['ajax']) && $_POST['ajax'] === 'form') {
-//      echo CActiveForm::validate($model);
-//      Yii::app()->end();
-//    }
-//    
-//    if (isset($_POST['Registro'])) {
-//      $model->attributes = $_POST['Registro'];
-//      if (!$model->validate()) {
-//        $model->addError('repetir_password', 'Error al eviar el formulario');
-//      } else {
-//        //guardar al usuario
-//      }
-//    }
-//  }
-  
 }
+

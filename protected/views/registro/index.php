@@ -1,7 +1,7 @@
 <?php
 /* @var $this RegistroController */
 /* @var $model Registro */
-
+ Yii::log("asdf");
 if (!Yii::app()->user->isGuest) {
   $this->redirect('/web');
 }
@@ -17,14 +17,13 @@ $this->breadcrumbs = array(
 <div class="form">
   <?php
   $form = $this->beginWidget('CActiveForm', array(
-      'id' => 'form1',
-      'method' => 'POST',
-      'enableClientValidation' => true,
-      'clientOptions' => array(
-          'validateOnSubmit' => true,
-          'validateOnChange' => true,
-          'validateOnType' => true,
-      ),
+    'id' => 'registro-form',
+    'enableAjaxValidation' => true,
+    'clientOptions' => array(
+      'validateOnSubmit' => true,
+//      'validateOnChange' => true,
+//      'validateOnType' => false,
+    ),
   ));
 ?>
 
