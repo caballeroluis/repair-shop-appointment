@@ -17,8 +17,8 @@ $this->breadcrumbs = array(
 <div class="form">
   <?php
   $form = $this->beginWidget('CActiveForm', array(
+      'id' => 'form1',
       'method' => 'POST',
-      'action' => Yii::app()->createUrl('/registro/create'),
       'enableClientValidation' => true,
       'clientOptions' => array(
           'validateOnSubmit' => true,
@@ -102,6 +102,19 @@ $this->breadcrumbs = array(
     </div>
   </div>
   
+  <div class="row">
+    <div class="span10">
+      <div id="div-lopd" class="alert alert-info">
+        <?php
+        echo CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'lopd'))['valor'];
+        ?>
+      </div>
+    </div>
+  </div>
+  
+  <input id="username" type="text" name="[username]" maxlength="120" size="20">
+  <div id="username_em_" class="errorMessage">asdf</div>
+  
   <div class="row buttons">
     <?php
     echo CHtml::submitButton('Crear');
@@ -109,17 +122,7 @@ $this->breadcrumbs = array(
   </div>
 
   <?php $this->endWidget(); ?>
-  
 
-  <div class="row">
-    <div class="span10">
-      <div id="div-lopd" class="alert alert-info">
-        <?php
-        print_r(CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'lopd'))['valor']);
-        ?>
-      </div>
-    </div>
-  </div>
 </div>
 
 
