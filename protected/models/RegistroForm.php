@@ -1,6 +1,6 @@
 <?php
 
-class Registro extends CFormModel {
+class RegistroForm extends CFormModel {
 
   public $username;
   public $password;
@@ -40,6 +40,8 @@ class Registro extends CFormModel {
             'email',
             'message' => 'El formato de email introducido no es correcto',
         ),
+        array('ulsername', 'unique'),
+        array('email', 'unique'),
         array(
           'password',
           'match',

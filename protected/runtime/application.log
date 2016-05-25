@@ -142,3 +142,22 @@ Stack trace:
 REQUEST_URI=/web/registro
 in C:\xampp\htdocs\web\protected\controllers\RegistroController.php (45)
 in C:\xampp\htdocs\web\index.php (13)
+2016/05/25 21:41:58 [error] [php] include(Registro.php): failed to open stream: No such file or directory (C:\xampp\htdocs\web\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\web\protected\controllers\RegistroController.php(40): spl_autoload_call()
+#1 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): RegistroController->actionIndex()
+#2 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(133): RegistroController->runAction()
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\web\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): RegistroController->filterAccessControl()
+#7 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\web\framework\web\CController.php(265): RegistroController->runActionWithFilters()
+#10 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): RegistroController->run()
+#11 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/web/registro
+in C:\xampp\htdocs\web\protected\controllers\RegistroController.php (40)
+in C:\xampp\htdocs\web\index.php (13)

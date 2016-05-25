@@ -1,10 +1,4 @@
 <?php
-/* @var $this RegistroController */
-/* @var $model RegistroForm */
-
-if (!Yii::app()->user->isGuest) {
-  $this->redirect('/web');
-}
 
 $this->breadcrumbs = array(
 	'Registro',
@@ -15,16 +9,17 @@ $this->breadcrumbs = array(
 <h1>Crear cuenta</h1>
 
 <div class="form">
-  <?php
-  $form = $this->beginWidget('CActiveForm', array(
-    'id' => 'registro-form',
-    'enableAjaxValidation' => true,
-    'clientOptions' => array(
-      'validateOnSubmit' => true,
-//      'validateOnChange' => true,
-//      'validateOnType' => false,
-    ),
-  ));
+<?php
+$form = $this->beginWidget('CActiveForm', array(
+	'method' => 'POST',
+	'action' => Yii::app()->createUrl('site/registro'),
+	'enableClientValidation' => true,
+	'clientOptions' => array(
+		'validateOnSubmit' => true,
+		'validateOnChange' => true,
+		'validateOnType' => true,
+	),
+));
 ?>
 
   <p class="note">Los campos con <span class="required">*</span> son oblitatorios.</p>
