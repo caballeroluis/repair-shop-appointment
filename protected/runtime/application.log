@@ -161,3 +161,53 @@ Stack trace:
 REQUEST_URI=/web/registro
 in C:\xampp\htdocs\web\protected\controllers\RegistroController.php (40)
 in C:\xampp\htdocs\web\index.php (13)
+2016/05/25 22:23:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "registro".' in C:\xampp\htdocs\web\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(270): CController->missingAction('registro')
+#1 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('registro')
+#2 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site/registro')
+#3 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/site/registro
+HTTP_REFERER=http://localhost/web/
+---
+2016/05/25 22:23:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "registro".' in C:\xampp\htdocs\web\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(270): CController->missingAction('registro')
+#1 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('registro')
+#2 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site/registro')
+#3 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/site/registro
+HTTP_REFERER=http://localhost/web/
+---
+2016/05/25 22:23:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "registro".' in C:\xampp\htdocs\web\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(270): CController->missingAction('registro')
+#1 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('registro')
+#2 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('site/registro')
+#3 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/site/registro
+HTTP_REFERER=http://localhost/web/
+---
+2016/05/25 22:25:26 [error] [php] Undefined variable: model (C:\xampp\htdocs\web\protected\views\site\registro.php:28)
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\web\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\xampp\htdocs\web\protected\controllers\SiteController.php(114): SiteController->render()
+#3 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(49): SiteController->actionRegistro()
+#4 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\web\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/web/site/registro
+in C:\xampp\htdocs\web\protected\views\site\registro.php (28)
+in C:\xampp\htdocs\web\protected\controllers\SiteController.php (114)
+in C:\xampp\htdocs\web\index.php (13)
