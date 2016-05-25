@@ -1,6 +1,6 @@
 <?php
 
-class Registro extends CFormModel {
+class RegistroForm extends CFormModel {
 
   public $username;
   public $password;
@@ -28,9 +28,7 @@ class Registro extends CFormModel {
         array('email, username', 'length', 'max' => 128, 'tooLong' => 'Máximo 128 caracteres'),
         array('password, imagen, codigo_activacion', 'length', 'max' => 255, 'tooLong' => 'Máximo 255 caracteres'),
         array('fecha_modificacion', 'safe'),
-        // The following rule is used by search().
-        // @todo Please remove those attributes that should not be searched.
-        array('id, nombre, apellido1, apellido2, telefono, codigo_postal, email, fecha_creacion, fecha_modificacion, password, vivo, imagen, codigo_activacion, activado, username', 'safe', 'on' => 'search'),
+        array('id, nombre, apellido1, apellido2, telefono, codigo_postal, email, fecha_creacion, fecha_modificacion, password, vivo, imagen, codigo_activacion, activado, username', 'safe', 'on'=>'search'),
         array(
             'nombre',
             'match',
@@ -42,6 +40,8 @@ class Registro extends CFormModel {
             'email',
             'message' => 'El formato de email introducido no es correcto',
         ),
+        array('ulsername', 'unique'),
+        array('email', 'unique'),
         array(
           'password',
           'match',
@@ -75,7 +75,40 @@ class Registro extends CFormModel {
             'required',
             'message' => 'Por favor, debe aceptar los términos y condiciones del servicio marcando la casilla.'
         ),
+//        array('username', 'existUsername'),
+//        array('email', 'existEmail'),
     );
   }
+  
+//  public function existeUsername($attributes, $params) {
+////    print_r(CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'terminos'))['valor']);
+//    $conexion = Yii::app()->db;
+//    $consulta = "SELECT username FROM cliente WHERE username = '$this->username'";
+//    
+//    $resultado = $conexion->createCommand($consulta);
+//    $filas = $resultado-query();
+//    
+//    foreach ($filas as $fila) {
+//      if ($this->username === $fila['username']) {
+//        $this->addError('username', 'Usuario no disponible');
+//        break;
+//      }
+//    }
+//  }
+//  
+//  public function existeEmail($attributes, $params) {
+//    $conexion = Yii::app()->db;
+//    $consulta = "SELECT email FROM cliente WHERE email = '$this->email'";
+//    
+//    $resultado = $conexion->createCommand($consulta);
+//    $filas = $resultado-query();
+//    
+//    foreach ($filas as $fila) {
+//      if ($this->email === $fila['email']) {
+//        $this->addError('email', 'Email no disponible');
+//        break;
+//      }
+//    }
+//  }
 
 }

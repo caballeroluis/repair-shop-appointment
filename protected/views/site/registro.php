@@ -1,10 +1,4 @@
 <?php
-/* @var $this RegistroController */
-/* @var $model Registro */
-
-if (!Yii::app()->user->isGuest) {
-  $this->redirect('/web');
-}
 
 $this->breadcrumbs = array(
 	'Registro',
@@ -15,17 +9,17 @@ $this->breadcrumbs = array(
 <h1>Crear cuenta</h1>
 
 <div class="form">
-  <?php
-  $form = $this->beginWidget('CActiveForm', array(
-      'method' => 'POST',
-      'action' => Yii::app()->createUrl('/registro/create'),
-      'enableClientValidation' => true,
-      'clientOptions' => array(
-          'validateOnSubmit' => true,
-          'validateOnChange' => true,
-          'validateOnType' => true,
-      ),
-  ));
+<?php
+$form = $this->beginWidget('CActiveForm', array(
+	'method' => 'POST',
+	'action' => Yii::app()->createUrl('site/registro'),
+	'enableClientValidation' => true,
+	'clientOptions' => array(
+		'validateOnSubmit' => true,
+		'validateOnChange' => true,
+		'validateOnType' => true,
+	),
+));
 ?>
 
   <p class="note">Los campos con <span class="required">*</span> son oblitatorios.</p>
@@ -102,6 +96,19 @@ $this->breadcrumbs = array(
     </div>
   </div>
   
+  <div class="row">
+    <div class="span10">
+      <div id="div-lopd" class="alert alert-info">
+        <?php
+        echo CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'lopd'))['valor'];
+        ?>
+      </div>
+    </div>
+  </div>
+  
+  <input id="username" type="text" name="[username]" maxlength="120" size="20">
+  <div id="username_em_" class="errorMessage">asdf</div>
+  
   <div class="row buttons">
     <?php
     echo CHtml::submitButton('Crear');
@@ -109,17 +116,7 @@ $this->breadcrumbs = array(
   </div>
 
   <?php $this->endWidget(); ?>
-  
 
-  <div class="row">
-    <div class="span10">
-      <div id="div-lopd" class="alert alert-info">
-        <?php
-        print_r(CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'lopd'))['valor']);
-        ?>
-      </div>
-    </div>
-  </div>
 </div>
 
 
