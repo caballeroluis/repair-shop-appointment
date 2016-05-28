@@ -1,5 +1,15 @@
 $(document).ready(function(){
   $('input[type=submit]').prop('disabled', true);
+  if ($('#RegistroForm_password').val() != '') { //esto hace que no se pierda la pass encriptada si no valida el formulario y el usuario no tenga que volver a menterla
+    $('#miPassword').val($('#RegistroForm_password').val());
+    $('#repetirMiPassword').val($('#RegistroForm_password').val());
+    $('#div-validar-pass').show();
+    $('#miPassword').css("background-color", "#C6D880");
+    $('#repetirMiPassword').css("background-color", "#C6D880");
+    $('input[type=submit]').prop('disabled', false);
+    $('#RegistroForm_password').val($('#miPassword').val());
+    $('#RegistroForm_repetir_password').val($('#repetirMiPassword').val());
+  }
 });
 
 $('#terminos').click(function(){

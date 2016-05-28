@@ -68,7 +68,7 @@ $this->breadcrumbs=array(
   </div>
   
   <div id="div-validar-pass" class="row">
-    <a href="#" id="validar-pass" alt="Validar Contrasenias" title="Encripta y valida las contraseñas antes de ser enviadas" class="btn btn-primary">Validar Contraseñas</a> <span class="required">*</span>
+    <a href="#" id="validar-pass" alt="Validar Contrasenias" title="N&uacute;meros, letras, may&uacute;scula/as y s&iacute;mbolo/os" class="btn btn-primary">Validar Contraseñas</a> <span class="required">*</span>
   </div>
 
   <div class="row">
@@ -109,7 +109,7 @@ $this->breadcrumbs=array(
         
     <div class="row">
     <?php
-    echo $form->labelEx($model, 'Acepta: <a title="Más información aquí" id="terminos">T&eacute;rminos y condiciones</a> <span class="required">*</span>&nbsp;&nbsp;', array('style' => 'display:inline'));
+    echo $form->labelEx($model, 'Acepta: <a title="M&aacute;s informaci&oacute;n aqu&iacute;" id="terminos">T&eacute;rminos y condiciones</a> <span class="required">*</span>&nbsp;&nbsp;', array('style' => 'display:inline'));
     echo $form->checkBox($model, 'terminos', array('style' => 'display:inline'));
     echo $form->error($model, 'terminos');
     ?>

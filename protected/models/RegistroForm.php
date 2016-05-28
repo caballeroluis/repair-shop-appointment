@@ -82,6 +82,10 @@ class RegistroForm extends CActiveRecord
                         ),
                         array('username', 'unique'),
                         array('email', 'unique'),
+                        array('nombre', 'required'),
+                        array('email', 'required'),
+                        array('codigo_postal', 'required'),
+                        array('username', 'required'),
 //                        array('password', 'required'),
 //                        array('repetir_password', 'required'),
 //                        array(
@@ -144,8 +148,8 @@ class RegistroForm extends CActiveRecord
 			'apellido1' => 'Apellido1',
 			'apellido2' => 'Apellido2',
 			'telefono' => 'Telefono',
-			'codigo_postal' => 'Codigo Postal <span class="required">*</span>',
-			'email' => 'Email <span class="required">*</span>',
+			'codigo_postal' => 'Codigo Postal',
+			'email' => 'Email',
 			'fecha_creacion' => 'Fecha Creacion',
 			'fecha_modificacion' => 'Fecha Modificacion',
 			'password' => 'Password (Contraseña)</span>',
@@ -153,7 +157,7 @@ class RegistroForm extends CActiveRecord
 			'imagen' => 'Imagen',
 			'codigo_activacion' => 'Codigo Activacion',
 			'activado' => 'Activado',
-			'username' => 'Username (Nombre de la cuenta) <span class="required">*</span>',
+			'username' => 'Username (Nombre de la cuenta)',
 			'observaciones' => 'Observaciones',
 		);
 	}
