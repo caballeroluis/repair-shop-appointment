@@ -39,7 +39,7 @@ class RegistroForm extends CActiveRecord
   public $imagen;
   public $codigo_activacion;
   public $fecha_creacion;
-  public $fecha_modificacion = '00000-00-00 00:00:00';
+  public $fecha_modificacion;
   public $repetir_password;
   public $terminos = 0;
   

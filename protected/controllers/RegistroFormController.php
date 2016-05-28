@@ -59,6 +59,7 @@ class RegistroFormController extends Controller
 	public function actionCreate()
 	{
 		$model=new RegistroForm;
+                $model['fecha_creacion'] = date('Y-m-d H:i:s');
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
