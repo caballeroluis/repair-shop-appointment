@@ -34,7 +34,7 @@ $this->breadcrumbs=array(
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Los ampos con <span class="required">*</span> son obligatorios.</p>
+	<p class="note">Los ampos con asterisco ( <span class="required">*</span> ) son obligatorios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -137,7 +137,7 @@ $this->breadcrumbs=array(
 
   <div class="row buttons">
     <?php
-    echo CHtml::submitButton('Crear');
+    echo CHtml::submitButton('Crear usuario');
     ?>
   </div>
 
