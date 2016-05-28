@@ -26,6 +26,23 @@
  */
 class RegistroForm extends CActiveRecord
 {
+  public $username;
+  public $password;
+  public $nombre;
+  public $email;
+  public $codigo_postal;
+  public $apellido1;
+  public $apellido2;
+  public $telefono;
+  public $vivo = 1;
+  public $activado = 0;
+  public $imagen;
+  public $codigo_activacion;
+  public $fecha_creacion;
+  public $fecha_modificacion = '00000-00-00 00:00:00';
+  public $repetir_password;
+  public $terminos = 0;
+  
 	/**
 	 * @return string the associated database table name
 	 */
@@ -50,7 +67,58 @@ class RegistroForm extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nombre, apellido1, apellido2, telefono, codigo_postal, email, fecha_creacion, fecha_modificacion, password, vivo, imagen, codigo_activacion, activado, username, observaciones', 'safe', 'on'=>'search'),
-		);
+                    
+                        //mis validaciones
+                        array(
+                            'nombre',
+                            'match',
+                            'pattern' => '/^[a-z0-9áéíóúñàèìòùäëïöüç\s]+$/i',
+                            'message' => 'El tipo de datos introducido es incorrecto'
+                        ),
+                        array(
+                            'email',
+                            'email',
+                            'message' => 'El formato de email introducido no es correcto',
+                        ),
+                        array('username', 'unique'),
+                        array('email', 'unique'),
+                        array(
+                            'password',
+                            'match',
+                            'pattern' => '/^.*(?=.{8,16})(?=.*[a-zA-Z])(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!#$%&? |\'\/"çªº`@^*_+=-¿¡;:,.\<\>\{\}\[\]]).*$/',
+                            'message' => 'Obligatorio letras (mayúsculas y minúsculas), números, algún símbolo y más de 8 caracteres',
+                        ),
+                        array(
+                            'repetir_password',
+                            'match',
+                            'pattern' => '/^.*(?=.{8,16})(?=.*[a-zA-Z])(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!#$%&? |\'\/"çªº`@^*_+=-¿¡;:,.\<\>\{\}\[\]]).*$/',
+                            'message' => 'Obligatorio letras (mayúsculas y minúsculas), números, algún símbolo y más de 8 caracteres',
+                        ),
+                        array(
+                            'repetir_password',
+                            'compare',
+                            'compareAttribute' => 'password',
+                            'message' => 'Las contraseñas no coinciden',
+                        ),
+                        array(
+                            'codigo_postal',
+                            'length', 'max' => 5,
+                        ),
+                        array(
+                            'codigo_postal',
+                            'match',
+                            'pattern' => '/^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$/',
+                            'message' => 'Código postal inválido',
+                        ),
+                        array(
+                          'terminos',
+                          'match',
+                          'pattern' => '/1/',
+                          'message' => 'Debe aceptar los términos para utilizar el servicio',
+                        ),
+//                        array('username', 'existUsername'),
+//                        array('email', 'existEmail'),
+                    );
 	}
 
 	/**
@@ -76,16 +144,16 @@ class RegistroForm extends CActiveRecord
 			'apellido1' => 'Apellido1',
 			'apellido2' => 'Apellido2',
 			'telefono' => 'Telefono',
-			'codigo_postal' => 'Codigo Postal',
-			'email' => 'Email',
+			'codigo_postal' => 'Codigo Postal <span class="required">*</span>',
+			'email' => 'Email <span class="required">*</span>',
 			'fecha_creacion' => 'Fecha Creacion',
 			'fecha_modificacion' => 'Fecha Modificacion',
-			'password' => 'Password',
+			'password' => 'Password (Contraseña) <span class="required">*</span>',
 			'vivo' => 'Vivo',
 			'imagen' => 'Imagen',
 			'codigo_activacion' => 'Codigo Activacion',
 			'activado' => 'Activado',
-			'username' => 'Username',
+			'username' => 'Username (Nombre de la cuenta) <span class="required">*</span>',
 			'observaciones' => 'Observaciones',
 		);
 	}

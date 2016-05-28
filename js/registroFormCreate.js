@@ -2,24 +2,16 @@ $(document).ready(function(){
 //  alert('asdf');
 });
 
-
 $('#terminos').click(function(){
   $('#div-terminos').slideToggle('fast');
 });
 
-$('#yw0').submit(function(){ //al enviarse el form...
-  document.getElementById('Registro_password').value =
-  document.getElementById('Registro_password').value;
-  
-  //encripto en sha512 la pass del cliente antes de enviarla
-  var passCruda = document.getElementById('password2').value;
-  var objetoSha = new jsSHA(passCruda, 'ASCII');
-  var passEncriptada = objetoSha.getHash('SHA-512', 'HEX');
-  
-  
-  alert(document.getElementById('Registro_password').value);
-  alert(document.getElementById('Registro_repetir_password').value);
-});
+//$('#registro-form-form').submit(function(){ //funcion que encripta la pass en cliente
+//  var passCruda = document.getElementById('RegistroForm_password').value;
+//  var objetoSha = new jsSHA(passCruda, 'ASCII');
+//  var passEncriptada = objetoSha.getHash('SHA-512', 'HEX');
+//  document.getElementById('RegistroForm_password').value = passEncriptada;
+//});
 
 
 
