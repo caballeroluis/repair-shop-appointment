@@ -116,8 +116,6 @@ class RegistroForm extends CActiveRecord
                           'pattern' => '/1/',
                           'message' => 'Debe aceptar los términos para utilizar el servicio',
                         ),
-//                        array('username', 'existUsername'),
-//                        array('email', 'existEmail'),
                     );
 	}
 
