@@ -7,3 +7,6 @@ protected/runtime/*
 /nbproject/private/private.xml
 /assets/*
 /protected/runtime/*
+
+protected/runtime/application.log
+/protected/runtime/application.log
