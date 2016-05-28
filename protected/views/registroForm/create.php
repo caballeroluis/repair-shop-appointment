@@ -44,16 +44,31 @@ $this->breadcrumbs=array(
     <?php echo $form->error($model, 'username'); ?>
   </div>
 
-  <div class="row">
+  <div class="row" style='display: none'> <!-- este campo oculto es el que está funcionado pero lo relleno a través de otro para poder encriptar pass en cliente -->
     <?php echo $form->labelEx($model, 'password'); ?>
     <?php echo $form->passwordField($model, 'password', array('size' => 60, 'maxlength' => 255)); ?>
     <?php echo $form->error($model, 'password'); ?>
   </div>
-
-  <div class="row">
+        
+  <div class="row" style='display: none'> <!-- este campo oculto es el que está funcionado pero lo relleno a través de otro para poder encriptar pass en cliente -->
     <?php echo $form->labelEx($model, 'Repetir password  <span class="required">*</span>'); ?>
     <?php echo $form->passwordField($model, 'repetir_password', array('size' => 60, 'maxlength' => 255)); ?>
     <?php echo $form->error($model, 'repetir_password'); ?>
+  </div>
+  
+  <!-- Estos dos campos van a pedir la pass al usuario, la van a encriptar y van a rellenar los campos de arriba que estan ocultos -->
+  <div class="row">
+    <label for="miPassword">Contraseña <span class="required">*</span></label>
+    <input size="60" maxlength="255" id="miPassword" type="password">
+  </div>
+        
+  <div class="row">
+    <label for="repetirMiPassword">Repetir contraseña <span class="required">*</span></label>
+    <input size="60" maxlength="255" id="repetirMiPassword" type="password">
+  </div>
+  
+  <div id="div-validar-pass" class="row">
+    <a href="#" id="validar-pass" alt="Validar Contrasenias" title="Encripta y valida las contraseñas antes de ser enviadas" class="btn btn-primary">Validar Contraseñas</a> <span class="required">*</span>
   </div>
 
   <div class="row">
