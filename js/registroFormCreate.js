@@ -54,7 +54,7 @@ function encriptar(pass){ //funcion que encripta una pass en SHA-512 en cliente 
   return passEncriptada;
 }
 
-var duracionGlobal = 6000;
+var duracionGlobal = 9000;
 
 function alerta(texto, duracion) { //funcion para hacer los alerts bonitos
   $('.alerta').html(texto + '<a class="close" title="close">x</a>');
