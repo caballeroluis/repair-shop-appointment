@@ -42,6 +42,7 @@ class RegistroForm extends CActiveRecord
   public $fecha_modificacion;
   public $repetir_password;
   public $terminos = 0;
+  public $verifyCode; //para mi captcha
   
 	/**
 	 * @return string the associated database table name
@@ -122,6 +123,8 @@ class RegistroForm extends CActiveRecord
                           'pattern' => '/1/',
                           'message' => 'Debe aceptar los términos para utilizar el servicio',
                         ),
+			// para mi captcha
+			array('verifyCode', 'captcha', 'allowEmpty' => !CCaptcha::checkRequirements()),
                     );
 	}
 
@@ -152,13 +155,14 @@ class RegistroForm extends CActiveRecord
 			'email' => 'Email',
 			'fecha_creacion' => 'Fecha Creacion',
 			'fecha_modificacion' => 'Fecha Modificacion',
-			'password' => 'Password (Contraseña)</span>',
+			'password' => 'Password (Contraseña)',
 			'vivo' => 'Vivo',
 			'imagen' => 'Imagen',
 			'codigo_activacion' => 'Codigo Activacion',
 			'activado' => 'Activado',
 			'username' => 'Username (Nombre de la cuenta)',
 			'observaciones' => 'Observaciones',
+                        'verifyCode' => 'Código de verificación', //para mi captcha
 		);
 	}
 

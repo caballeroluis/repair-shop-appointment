@@ -31,13 +31,19 @@ class RegistroFormController extends Controller
 				'actions'=>array('create'),
 				'users'=>array('*'),
 			),
-			array('allow',
+			array('deny',
 				'actions'=>array('admin','index','view','delete','update'),
-				'users'=>array('admin'),
+				'users'=>array('*', 'admin', '@'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('*'),
+				'users'=>array('admin', '@'),
 			),
+                        //para mi captcha
+                        array(
+                          'allow',
+                          'actions' => array('captcha'),
+                          'users' => array('*'),
+                        ),
 		);
 	}
 
@@ -75,8 +81,25 @@ class RegistroFormController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        
+  //para mi captcha
+  public function actions() {
+    return array(
+        // captcha action renders the CAPTCHA image displayed on the contact page
+        'captcha' => array(
+            'class' => 'CCaptchaAction',
+            'backColor' => 0xFFFFFF,
+        ),
+        // page action renders "static" pages stored under 'protected/views/site/pages'
+        // They can be accessed via: index.php?r=site/page&view=FileName
+        'page' => array(
+            'class' => 'CViewAction',
+        ),
+    );
+  }
 
-	/**
+  /**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
