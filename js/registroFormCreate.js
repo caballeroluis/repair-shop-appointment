@@ -21,7 +21,7 @@ $('#terminos').click(function(){
 $('#validar-pass').click(function(){ //funcion que valida las pass crudas
   var pass1 = $('#miPassword').val();
   var pass2 = $('#repetirMiPassword').val();
-  var regEx = /^.*(?=.{8,16})(?=.*[a-zA-Z])(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!#$%&? |\'\/"çªº`@^*_+=-¿¡;:,.\<\>\{\}\[\]]).*$/;
+  var regEx = /^.*(?=.{8,128})(?=.*[a-zA-Z])(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!#$%&? |\'\/"çªº`@^*_+=-¿¡;:,.\<\>\{\}\[\]]).*$/;
   
   if (pass1 === pass2) {
     if (pass1.match(regEx)) {
@@ -37,10 +37,10 @@ $('#validar-pass').click(function(){ //funcion que valida las pass crudas
           $('#repetirMiPassword').prop('disabled', true);
           $('#miPassword').prop('disabled', true);
         } else {
-          alerta('El campo Repetir contraseña debe tener letras, números, alguna mayúscula y algún símbolo', duracionGlobal);
+          alerta('El campo Repetir contraseña debe tener letras, números, alguna mayúscula, algún símbolo un mínimo de 8 caracteres y un máximo de 128', duracionGlobal);
         }
     } else {
-      alerta('El campo Contraseña debe tener letras, números, alguna mayúscula y algún símbolo', duracionGlobal);
+      alerta('El campo Repetir contraseña debe tener letras, números, alguna mayúscula, algún símbolo más de 8 caracteres y menos de 128', duracionGlobal);
     }
   } else {
       alerta('Las contraseñas no coinciden', duracionGlobal);

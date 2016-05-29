@@ -57,12 +57,12 @@ $this->breadcrumbs=array(
   <!-- Estos dos campos van a pedir la pass al usuario, la van a encriptar y van a rellenar los campos de arriba que estan ocultos -->
   <div class="row">
     <label for="miPassword">Contraseña <span class="required">*</span></label>
-    <input size="60" maxlength="255" id="miPassword" type="password">
+    <input size="60" maxlength="128" id="miPassword" type="password">
   </div>
         
   <div class="row">
     <label for="repetirMiPassword">Repetir contraseña <span class="required">*</span></label>
-    <input size="60" maxlength="255" id="repetirMiPassword" type="password">
+    <input size="60" maxlength="128" id="repetirMiPassword" type="password">
   </div>
   
   <div id="div-validar-pass" class="row">
@@ -135,14 +135,14 @@ $this->breadcrumbs=array(
 
   <?php if(CCaptcha::checkRequirements()): ?> <!-- para mi captcha -->
   <div class="row">
-          <?php echo $form->labelEx($model,'verifyCode'); ?>
-          <div>
-          <?php $this->widget('CCaptcha'); ?>
-          <?php echo $form->textField($model,'verifyCode'); ?>
-          </div>
-          <div class="hint">Please enter the letters as they are shown in the image above.
-          <br/>Letters are not case-sensitive.</div>
-          <?php echo $form->error($model,'verifyCode'); ?>
+    <?php echo $form->labelEx($model,'verifyCode'); ?>
+    <div>
+    <?php $this->widget('CCaptcha'); ?>
+    <?php echo $form->textField($model,'verifyCode'); ?>
+    </div>
+    <div class="hint">Please enter the letters as they are shown in the image above.
+    <br/>Letters are not case-sensitive.</div>
+    <?php echo $form->error($model,'verifyCode'); ?>
   </div>
   <?php endif; ?>
   
