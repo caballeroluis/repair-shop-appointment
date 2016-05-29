@@ -34,16 +34,15 @@ $this->breadcrumbs=array(
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
-        <div class="row" style="display: none">
+        <div class="row" style="display: none"> <!-- oculto el input password original -->
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
-		<?php echo $form->error($model,'password'); ?>
 	</div>
         
-        <div class="row">
+        <div class="row"> <!-- muestro mi input password que enviará la password cifrada al original -->
           <label for="miLoginPassword" >Contraseña <span class="required">*</span></label>
           <input id="miLoginPassword" type="password">
-          <div class="errorMessage" id="miLoginPassword" style="display:none"></div>
+          <?php echo $form->error($model,'password'); ?> <!-- utulizo los errores del original -->
         </div>
 
 	<div class="row rememberMe">

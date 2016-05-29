@@ -162,7 +162,7 @@ class RegistroForm extends CActiveRecord
 			'activado' => 'Activado',
 			'username' => 'Username (Nombre de la cuenta)',
 			'observaciones' => 'Observaciones',
-                        'verifyCode' => 'Código de verificación', //para mi captcha
+                        'verifyCode' => 'Código de verificación <span class="required">*</span>', //para mi captcha
 		);
 	}
 
