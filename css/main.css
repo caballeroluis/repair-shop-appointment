@@ -239,6 +239,7 @@ div.search-form
     font-size: 1em;
     padding: 10px;
     border-radius: 2px;
+    min-width: 258px;
   }
   
   .alerta {
