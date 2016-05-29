@@ -161,7 +161,7 @@ $this->breadcrumbs=array(
 
 
 
-
+<!-- Importo mis scripts para encriptar contraseñas -->
 <script src="/web/js/registroFormCreate.js" type="text/javascript"></script>
 <script src="/web/js/encriptarSHA.js" type="text/javascript"></script>
 <script src="/web/protected/extensions/jsSHA/src/sha.js" type="text/javascript"></script>

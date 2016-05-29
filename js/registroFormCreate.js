@@ -19,8 +19,8 @@ $('#terminos').click(function(){
 });
 
 $('#validar-pass').click(function(){ //funcion que valida las pass crudas
-  var pass1 = document.getElementById('miPassword').value;
-  var pass2 = document.getElementById('repetirMiPassword').value;
+  var pass1 = $('#miPassword').val();
+  var pass2 = $('#repetirMiPassword').val();
   var regEx = /^.*(?=.{8,16})(?=.*[a-zA-Z])(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!#$%&? |\'\/"çªº`@^*_+=-¿¡;:,.\<\>\{\}\[\]]).*$/;
   
   if (pass1 === pass2) {
@@ -56,11 +56,11 @@ function encriptar(pass){ //funcion que encripta una pass en SHA-512 en cliente 
 
 var duracionGlobal = 6000;
 
-function alerta(texto, duracion) {
-  $('.alerta').html(texto);
+function alerta(texto, duracion) { //funcion para hacer los alerts bonitos
+  $('.alerta').html(texto + '<a class="close" title="close">x</a>');
   $('.alerta').slideDown('fast');
   $('.alerta').click(function(){
-    $(this).hide();
+    $(this).slideUp(100);
   });
   setTimeout(function() {
     $('.alerta').slideUp('slow');

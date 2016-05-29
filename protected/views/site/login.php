@@ -34,14 +34,20 @@ $this->breadcrumbs=array(
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
-	<div class="row">
+        <div class="row" style="display: none">
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
 	</div>
+        
+        <div class="row">
+          <label for="miLoginPassword" >Contraseña <span class="required">*</span></label>
+          <input id="miLoginPassword" type="password">
+          <div class="errorMessage" id="miLoginPassword" style="display:none"></div>
+          <p class="hint">
+            Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
+          </p>
+        </div>
 
 	<div class="row rememberMe">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
@@ -55,3 +61,9 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+
+
+<!-- Importo mis scripts para encriptar contraseñas -->
+<script src="/web/js/login.js" type="text/javascript"></script>
+<script src="/web/js/encriptarSHA.js" type="text/javascript"></script>
+<script src="/web/protected/extensions/jsSHA/src/sha.js" type="text/javascript"></script>
