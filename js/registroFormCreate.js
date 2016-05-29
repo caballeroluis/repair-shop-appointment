@@ -37,13 +37,13 @@ $('#validar-pass').click(function(){ //funcion que valida las pass crudas
           $('#repetirMiPassword').prop('disabled', true);
           $('#miPassword').prop('disabled', true);
         } else {
-          alert('El campo Repetir contraseña debe tener letras, números, alguna mayúscula y algún símbolo');
+          alerta('El campo Repetir contraseña debe tener letras, números, alguna mayúscula y algún símbolo', duracionGlobal);
         }
     } else {
-      alert('El campo Contraseña debe tener letras, números, alguna mayúscula y algún símbolo');
+      alerta('El campo Contraseña debe tener letras, números, alguna mayúscula y algún símbolo', duracionGlobal);
     }
   } else {
-      alert('Las contraseñas no coinciden');
+      alerta('Las contraseñas no coinciden', duracionGlobal);
   }
 });
 
@@ -52,4 +52,17 @@ function encriptar(pass){ //funcion que encripta una pass en SHA-512 en cliente 
   var objetoSha = new jsSHA(passCruda, 'ASCII');
   var passEncriptada = objetoSha.getHash('SHA-512', 'HEX');
   return passEncriptada;
+}
+
+var duracionGlobal = 6000;
+
+function alerta(texto, duracion) {
+  $('.alerta').html(texto);
+  $('.alerta').slideDown('fast');
+  $('.alerta').click(function(){
+    $(this).hide();
+  });
+  setTimeout(function() {
+    $('.alerta').slideUp('slow');
+  }, duracion);
 }

@@ -32,7 +32,7 @@ $this->breadcrumbs=array(
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Los ampos con asterisco ( <span class="required">*</span> ) son obligatorios.</p>
+	<p class="note">Los campos con asterisco ( <span class="required">*</span> ) son obligatorios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -88,7 +88,7 @@ $this->breadcrumbs=array(
   </div>
 
   <div class="row">
-    <?php echo $form->labelEx($model, 'Pimer apellido'); ?>
+    <?php echo $form->labelEx($model, 'Primer apellido'); ?>
     <?php echo $form->textField($model, 'apellido1', array('size' => 45, 'maxlength' => 45)); ?>
     <?php echo $form->error($model, 'apellido1'); ?>
   </div>
@@ -157,7 +157,7 @@ $this->breadcrumbs=array(
 </div><!-- form -->
 
 
-
+<div class="alert alert-danger alerta"></div>
 
 
 
