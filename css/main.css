@@ -234,12 +234,13 @@ div.search-form
 
 .caja-gris {
   background-color: #e9e9e9;
-    height: 200px;
+    height: 258px;
     margin-bottom: 10px;
     font-size: 1em;
     padding: 10px;
     border-radius: 2px;
     min-width: 258px;
+    /*max-width: 550px;*/
   }
   
   .alerta {
@@ -251,4 +252,8 @@ div.search-form
     -webkit-box-shadow: 2px 4px 31px -3px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 4px 31px -3px rgba(0,0,0,0.75);
     box-shadow: 2px 4px 31px -3px rgba(0,0,0,0.75);
+  }
+  
+  #page {
+    min-width: 278px;
   }
