@@ -37,10 +37,10 @@ $('#validar-pass').click(function(){ //funcion que valida las pass crudas
           $('#repetirMiPassword').prop('disabled', true);
           $('#miPassword').prop('disabled', true);
         } else {
-          alerta('El campo Repetir contraseña debe tener letras, números, alguna mayúscula, algún símbolo un mínimo de 8 caracteres y un máximo de 128', duracionGlobal);
+          alerta('El campo Repetir contraseña debe tener letras, números, alguna mayúscula, algún símbolo un mínimo de 7 caracteres y un máximo de 129', duracionGlobal);
         }
     } else {
-      alerta('El campo Repetir contraseña debe tener letras, números, alguna mayúscula, algún símbolo más de 8 caracteres y menos de 128', duracionGlobal);
+      alerta('El campo Repetir contraseña debe tener letras, números, alguna mayúscula, algún símbolo más de 7 caracteres y menos de 129', duracionGlobal);
     }
   } else {
       alerta('Las contraseñas no coinciden', duracionGlobal);

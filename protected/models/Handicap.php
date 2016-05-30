@@ -13,6 +13,7 @@
  * @property string $fecha_creacion
  * @property string $fecha_modificacion
  * @property string $observaciones
+ * @property string $informacion
  */
 class Handicap extends CActiveRecord
 {
@@ -34,11 +35,11 @@ class Handicap extends CActiveRecord
 		return array(
 			array('recargo, minutos_duracion, vivo', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>45),
-			array('imagen, observaciones', 'length', 'max'=>255),
+			array('imagen, observaciones, informacion', 'length', 'max'=>255),
 			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, recargo, minutos_duracion, imagen, vivo, fecha_creacion, fecha_modificacion, observaciones', 'safe', 'on'=>'search'),
+			array('id, nombre, recargo, minutos_duracion, imagen, vivo, fecha_creacion, fecha_modificacion, observaciones, informacion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,6 +69,7 @@ class Handicap extends CActiveRecord
 			'fecha_creacion' => 'Fecha Creacion',
 			'fecha_modificacion' => 'Fecha Modificacion',
 			'observaciones' => 'Observaciones',
+			'informacion' => 'Informacion',
 		);
 	}
 
@@ -98,6 +100,7 @@ class Handicap extends CActiveRecord
 		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
 		$criteria->compare('fecha_modificacion',$this->fecha_modificacion,true);
 		$criteria->compare('observaciones',$this->observaciones,true);
+		$criteria->compare('informacion',$this->informacion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

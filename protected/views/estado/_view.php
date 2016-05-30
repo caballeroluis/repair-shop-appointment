@@ -29,5 +29,15 @@
 	<?php echo CHtml::encode($data->fecha_modificacion); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('observaciones')); ?>:</b>
+	<?php echo CHtml::encode($data->observaciones); ?>
+	<br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('informacion')); ?>:</b>
+	<?php echo CHtml::encode($data->informacion); ?>
+	<br />
+
+	*/ ?>
 
 </div>

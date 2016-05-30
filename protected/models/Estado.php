@@ -11,6 +11,7 @@
  * @property string $fecha_creacion
  * @property string $fecha_modificacion
  * @property string $observaciones
+ * @property string $informacion
  *
  * The followings are the available model relations:
  * @property Cita[] $citas
@@ -35,11 +36,11 @@ class Estado extends CActiveRecord
 		return array(
 			array('vivo', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>45),
-			array('descripcion, observaciones', 'length', 'max'=>255),
+			array('descripcion, observaciones, informacion', 'length', 'max'=>255),
 			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, descripcion, vivo, fecha_creacion, fecha_modificacion, observaciones', 'safe', 'on'=>'search'),
+			array('id, nombre, descripcion, vivo, fecha_creacion, fecha_modificacion, observaciones, informacion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,6 +69,7 @@ class Estado extends CActiveRecord
 			'fecha_creacion' => 'Fecha Creacion',
 			'fecha_modificacion' => 'Fecha Modificacion',
 			'observaciones' => 'Observaciones',
+			'informacion' => 'Informacion',
 		);
 	}
 
@@ -96,6 +98,7 @@ class Estado extends CActiveRecord
 		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
 		$criteria->compare('fecha_modificacion',$this->fecha_modificacion,true);
 		$criteria->compare('observaciones',$this->observaciones,true);
+		$criteria->compare('informacion',$this->informacion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

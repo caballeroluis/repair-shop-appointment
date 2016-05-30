@@ -30,5 +30,6 @@ $this->menu=array(
 		'vivo',
 		'imagen',
 		'observaciones',
+		'informacion',
 	),
 )); ?>

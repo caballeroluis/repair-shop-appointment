@@ -15,6 +15,7 @@
  * @property string $imagen
  * @property string $observaciones
  * @property integer $minutos_instalacion
+ * @property string $informacion
  *
  * The followings are the available model relations:
  * @property Cita[] $citas
@@ -40,11 +41,11 @@ class Pieza extends CActiveRecord
 		return array(
 			array('precio, precio_instalar, vivo, marca_pieza_id, minutos_instalacion', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>45),
-			array('imagen, observaciones', 'length', 'max'=>255),
+			array('imagen, observaciones, informacion', 'length', 'max'=>255),
 			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, precio, precio_instalar, fecha_creacion, fecha_modificacion, vivo, marca_pieza_id, imagen, observaciones, minutos_instalacion', 'safe', 'on'=>'search'),
+			array('id, nombre, precio, precio_instalar, fecha_creacion, fecha_modificacion, vivo, marca_pieza_id, imagen, observaciones, minutos_instalacion, informacion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,6 +79,7 @@ class Pieza extends CActiveRecord
 			'imagen' => 'Imagen',
 			'observaciones' => 'Observaciones',
 			'minutos_instalacion' => 'Minutos Instalacion',
+			'informacion' => 'Informacion',
 		);
 	}
 
@@ -110,6 +112,7 @@ class Pieza extends CActiveRecord
 		$criteria->compare('imagen',$this->imagen,true);
 		$criteria->compare('observaciones',$this->observaciones,true);
 		$criteria->compare('minutos_instalacion',$this->minutos_instalacion);
+		$criteria->compare('informacion',$this->informacion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

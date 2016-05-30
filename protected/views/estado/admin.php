@@ -51,6 +51,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'vivo',
 		'fecha_creacion',
 		'fecha_modificacion',
+		/*
+		'observaciones',
+		'informacion',
+		*/
 		array(
 			'class'=>'CButtonColumn',
 		),

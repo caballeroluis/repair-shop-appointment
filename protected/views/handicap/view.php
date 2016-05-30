@@ -30,5 +30,6 @@ $this->menu=array(
 		'fecha_creacion',
 		'fecha_modificacion',
 		'observaciones',
+		'informacion',
 	),
 )); ?>

@@ -46,3 +46,216 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/web/calendarioForm/index
 ---
+2016/05/30 00:04:14 [warning] [application] Failed to set unsafe attribute "repetir_password" of "RegistroForm".
+in C:\xampp\htdocs\web\protected\controllers\RegistroFormController.php (75)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/30 00:04:39 [warning] [application] Failed to set unsafe attribute "repetir_password" of "RegistroForm".
+in C:\xampp\htdocs\web\protected\controllers\RegistroFormController.php (75)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/30 00:06:53 [warning] [application] Failed to set unsafe attribute "repetir_password" of "RegistroForm".
+in C:\xampp\htdocs\web\protected\controllers\RegistroFormController.php (75)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/30 00:07:31 [warning] [application] Failed to set unsafe attribute "repetir_password" of "RegistroForm".
+in C:\xampp\htdocs\web\protected\controllers\RegistroFormController.php (75)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/30 00:09:27 [warning] [application] Failed to set unsafe attribute "repetir_password" of "RegistroForm".
+in C:\xampp\htdocs\web\protected\controllers\RegistroFormController.php (75)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/30 00:12:11 [warning] [application] Failed to set unsafe attribute "repetir_password" of "RegistroForm".
+in C:\xampp\htdocs\web\protected\controllers\RegistroFormController.php (75)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/30 22:12:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('cliente/create')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/cliente/create
+---
+2016/05/30 22:15:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('mano')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/mano
+---
+2016/05/30 22:15:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('pieza')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/pieza
+---
+2016/05/30 22:15:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('pieza')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/pieza
+---
+2016/05/30 22:15:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('estado')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/estado
+---
+2016/05/30 22:15:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap/create')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/handicap/create
+HTTP_REFERER=http://localhost/web/handicap
+---
+2016/05/30 22:15:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap/create')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/handicap/create
+HTTP_REFERER=http://localhost/web/handicap
+---
+2016/05/30 22:15:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/handicap
+---
+2016/05/30 22:15:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap/create')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/handicap/create
+HTTP_REFERER=http://localhost/web/handicap
+---
+2016/05/30 22:15:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('handicap')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/handicap
+---
+2016/05/30 22:15:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('cliente/create')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/cliente/create
+---
+2016/05/30 22:15:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('cliente/create')
+#9 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/cliente/create
+---

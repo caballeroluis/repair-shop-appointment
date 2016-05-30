@@ -50,6 +50,10 @@
 	<?php echo CHtml::encode($data->minutos_instalacion); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('informacion')); ?>:</b>
+	<?php echo CHtml::encode($data->informacion); ?>
+	<br />
+
 	*/ ?>
 
 </div>

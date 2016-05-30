@@ -13,6 +13,7 @@
  * @property integer $vivo
  * @property string $imagen
  * @property string $observaciones
+ * @property string $informacion
  *
  * The followings are the available model relations:
  * @property Cita[] $citas
@@ -37,11 +38,11 @@ class Mano extends CActiveRecord
 		return array(
 			array('coste, minutos_duracion, vivo', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>45),
-			array('imagen, observaciones', 'length', 'max'=>255),
+			array('imagen, observaciones, informacion', 'length', 'max'=>255),
 			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, coste, minutos_duracion, fecha_creacion, fecha_modificacion, vivo, imagen, observaciones', 'safe', 'on'=>'search'),
+			array('id, nombre, coste, minutos_duracion, fecha_creacion, fecha_modificacion, vivo, imagen, observaciones, informacion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,6 +73,7 @@ class Mano extends CActiveRecord
 			'vivo' => 'Vivo',
 			'imagen' => 'Imagen',
 			'observaciones' => 'Observaciones',
+			'informacion' => 'Informacion',
 		);
 	}
 
@@ -102,6 +104,7 @@ class Mano extends CActiveRecord
 		$criteria->compare('vivo',$this->vivo);
 		$criteria->compare('imagen',$this->imagen,true);
 		$criteria->compare('observaciones',$this->observaciones,true);
+		$criteria->compare('informacion',$this->informacion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

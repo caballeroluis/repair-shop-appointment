@@ -32,5 +32,6 @@ $this->menu=array(
 		'imagen',
 		'observaciones',
 		'minutos_instalacion',
+		'informacion',
 	),
 )); ?>

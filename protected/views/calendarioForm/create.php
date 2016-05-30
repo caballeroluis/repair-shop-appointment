@@ -16,7 +16,12 @@ $this->breadcrumbs = array(
       <div class="caja-gris">
         <fieldset>
           <label>¿Qué desea hacer?</label>
-        </fieldset>
+          <select>
+            <option>revision completa</option>
+            <option>revision estandar</option>
+            <option>ajuste de frenos</option>
+          </select>
+          
       </div>
     </div>
     <div id="box2" class="span6 ">

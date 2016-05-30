@@ -42,6 +42,10 @@
 	<?php echo CHtml::encode($data->observaciones); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('informacion')); ?>:</b>
+	<?php echo CHtml::encode($data->informacion); ?>
+	<br />
+
 	*/ ?>
 
 </div>

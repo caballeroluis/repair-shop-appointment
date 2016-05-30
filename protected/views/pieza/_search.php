@@ -66,6 +66,11 @@
 		<?php echo $form->textField($model,'minutos_instalacion'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'informacion'); ?>
+		<?php echo $form->textField($model,'informacion',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
