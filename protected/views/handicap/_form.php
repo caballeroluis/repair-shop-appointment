@@ -73,6 +73,12 @@
 		<?php echo $form->error($model,'informacion'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'mano_id'); ?>
+		<?php echo $form->textField($model,'mano_id'); ?>
+		<?php echo $form->error($model,'mano_id'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

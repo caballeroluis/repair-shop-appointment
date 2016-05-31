@@ -46,6 +46,10 @@
 	<?php echo CHtml::encode($data->informacion); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('mano_id')); ?>:</b>
+	<?php echo CHtml::encode($data->mano_id); ?>
+	<br />
+
 	*/ ?>
 
 </div>

@@ -14,6 +14,10 @@
  * @property string $fecha_modificacion
  * @property string $observaciones
  * @property string $informacion
+ * @property integer $mano_id
+ *
+ * The followings are the available model relations:
+ * @property Mano $mano
  */
 class Handicap extends CActiveRecord
 {
@@ -33,13 +37,14 @@ class Handicap extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('recargo, minutos_duracion, vivo', 'numerical', 'integerOnly'=>true),
+			array('mano_id', 'required'),
+			array('recargo, minutos_duracion, vivo, mano_id', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>45),
 			array('imagen, observaciones, informacion', 'length', 'max'=>255),
 			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, recargo, minutos_duracion, imagen, vivo, fecha_creacion, fecha_modificacion, observaciones, informacion', 'safe', 'on'=>'search'),
+			array('id, nombre, recargo, minutos_duracion, imagen, vivo, fecha_creacion, fecha_modificacion, observaciones, informacion, mano_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,6 +56,7 @@ class Handicap extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'mano' => array(self::BELONGS_TO, 'Mano', 'mano_id'),
 		);
 	}
 
@@ -70,6 +76,7 @@ class Handicap extends CActiveRecord
 			'fecha_modificacion' => 'Fecha Modificacion',
 			'observaciones' => 'Observaciones',
 			'informacion' => 'Informacion',
+			'mano_id' => 'Mano',
 		);
 	}
 
@@ -101,6 +108,7 @@ class Handicap extends CActiveRecord
 		$criteria->compare('fecha_modificacion',$this->fecha_modificacion,true);
 		$criteria->compare('observaciones',$this->observaciones,true);
 		$criteria->compare('informacion',$this->informacion,true);
+		$criteria->compare('mano_id',$this->mano_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -31,5 +31,6 @@ $this->menu=array(
 		'fecha_modificacion',
 		'observaciones',
 		'informacion',
+		'mano_id',
 	),
 )); ?>
