@@ -1,36 +1,28 @@
 <?php
 
 /**
- * This is the model class for table "pieza".
+ * This is the model class for table "categoria_pieza".
  *
- * The followings are the available columns in table 'pieza':
+ * The followings are the available columns in table 'categoria_pieza':
  * @property integer $id
  * @property string $nombre
- * @property integer $precio
- * @property integer $precio_instalar
+ * @property string $imagen
+ * @property integer $vivo
  * @property string $fecha_creacion
  * @property string $fecha_modificacion
- * @property integer $vivo
- * @property integer $marca_pieza_id
- * @property string $imagen
  * @property string $observaciones
- * @property integer $minutos_instalacion
- * @property string $informacion
- * @property integer $categoria_pieza_id
  *
  * The followings are the available model relations:
- * @property Cita[] $citas
- * @property CategoriaPieza $categoriaPieza
- * @property MarcaPieza $marcaPieza
+ * @property Pieza[] $piezas
  */
-class Pieza extends CActiveRecord
+class CategoriaPieza extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'pieza';
+		return 'categoria_pieza';
 	}
 
 	/**
@@ -41,14 +33,13 @@ class Pieza extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('marca_pieza_id, categoria_pieza_id', 'required'),
-			array('precio, precio_instalar, vivo, marca_pieza_id, minutos_instalacion, categoria_pieza_id', 'numerical', 'integerOnly'=>true),
-			array('nombre', 'length', 'max'=>45),
-			array('imagen, observaciones, informacion', 'length', 'max'=>255),
+			array('vivo', 'numerical', 'integerOnly'=>true),
+			array('nombre, observaciones', 'length', 'max'=>45),
+			array('imagen', 'length', 'max'=>225),
 			array('fecha_creacion, fecha_modificacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, precio, precio_instalar, fecha_creacion, fecha_modificacion, vivo, marca_pieza_id, imagen, observaciones, minutos_instalacion, informacion, categoria_pieza_id', 'safe', 'on'=>'search'),
+			array('id, nombre, imagen, vivo, fecha_creacion, fecha_modificacion, observaciones', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,9 +51,7 @@ class Pieza extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'citas' => array(self::MANY_MANY, 'Cita', 'cita_has_pieza(pieza_id, cita_id)'),
-			'categoriaPieza' => array(self::BELONGS_TO, 'CategoriaPieza', 'categoria_pieza_id'),
-			'marcaPieza' => array(self::BELONGS_TO, 'MarcaPieza', 'marca_pieza_id'),
+			'piezas' => array(self::HAS_MANY, 'Pieza', 'categoria_pieza_id'),
 		);
 	}
 
@@ -74,17 +63,11 @@ class Pieza extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nombre' => 'Nombre',
-			'precio' => 'Precio',
-			'precio_instalar' => 'Precio Instalar',
+			'imagen' => 'Imagen',
+			'vivo' => 'Vivo',
 			'fecha_creacion' => 'Fecha Creacion',
 			'fecha_modificacion' => 'Fecha Modificacion',
-			'vivo' => 'Vivo',
-			'marca_pieza_id' => 'Marca Pieza',
-			'imagen' => 'Imagen',
 			'observaciones' => 'Observaciones',
-			'minutos_instalacion' => 'Minutos Instalacion',
-			'informacion' => 'Informacion',
-			'categoria_pieza_id' => 'Categoria Pieza',
 		);
 	}
 
@@ -108,17 +91,11 @@ class Pieza extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
-		$criteria->compare('precio',$this->precio);
-		$criteria->compare('precio_instalar',$this->precio_instalar);
+		$criteria->compare('imagen',$this->imagen,true);
+		$criteria->compare('vivo',$this->vivo);
 		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
 		$criteria->compare('fecha_modificacion',$this->fecha_modificacion,true);
-		$criteria->compare('vivo',$this->vivo);
-		$criteria->compare('marca_pieza_id',$this->marca_pieza_id);
-		$criteria->compare('imagen',$this->imagen,true);
 		$criteria->compare('observaciones',$this->observaciones,true);
-		$criteria->compare('minutos_instalacion',$this->minutos_instalacion);
-		$criteria->compare('informacion',$this->informacion,true);
-		$criteria->compare('categoria_pieza_id',$this->categoria_pieza_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -129,7 +106,7 @@ class Pieza extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Pieza the static model class
+	 * @return CategoriaPieza the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

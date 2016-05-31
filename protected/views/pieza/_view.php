@@ -54,6 +54,10 @@
 	<?php echo CHtml::encode($data->informacion); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('categoria_pieza_id')); ?>:</b>
+	<?php echo CHtml::encode($data->categoria_pieza_id); ?>
+	<br />
+
 	*/ ?>
 
 </div>

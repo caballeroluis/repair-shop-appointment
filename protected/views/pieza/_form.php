@@ -85,6 +85,12 @@
 		<?php echo $form->error($model,'informacion'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'categoria_pieza_id'); ?>
+		<?php echo $form->textField($model,'categoria_pieza_id'); ?>
+		<?php echo $form->error($model,'categoria_pieza_id'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

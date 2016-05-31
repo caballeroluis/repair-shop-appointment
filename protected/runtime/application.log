@@ -419,3 +419,33 @@ Stack trace:
 REQUEST_URI=/web/handicap/create
 HTTP_REFERER=http://localhost/web/handicap/create
 ---
+2016/05/31 22:25:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`web`.`pieza`, CONSTRAINT `fk_pieza_marca_pieza1` FOREIGN KEY (`marca_pieza_id`) REFERENCES `marca_pieza` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `marca_pieza` WHERE `marca_pieza`.`id`=1.
+in C:\xampp\htdocs\web\protected\controllers\MarcaPiezaController.php (115)
+in C:\xampp\htdocs\web\index.php (13)
+2016/05/31 22:25:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`web`.`pieza`, CONSTRAINT `fk_pieza_marca_pieza1` FOREIGN KEY (`marca_pieza_id`) REFERENCES `marca_pieza` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `marca_pieza` WHERE `marca_pieza`.`id`=1' in C:\xampp\htdocs\web\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 C:\xampp\htdocs\web\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('1')
+#2 C:\xampp\htdocs\web\protected\controllers\MarcaPiezaController.php(115): CActiveRecord->delete()
+#3 [internal function]: MarcaPiezaController->actionDelete('1')
+#4 C:\xampp\htdocs\web\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(MarcaPiezaController), Array)
+#5 C:\xampp\htdocs\web\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarcaPiezaController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\web\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\web\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\web\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\web\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\web\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\web\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\web\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\web\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\web\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\web\framework\web\CWebApplication.php(141): CWebApplication->runController('marcaPieza/dele...')
+#19 C:\xampp\htdocs\web\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\web\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/web/marcaPieza/delete/1?ajax=marca-pieza-grid
+HTTP_REFERER=http://localhost/web/marcaPieza/admin
+---

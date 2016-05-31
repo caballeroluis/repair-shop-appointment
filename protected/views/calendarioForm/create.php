@@ -32,7 +32,8 @@ $this->breadcrumbs = array(
           </select>  
           <a href="#" class="btn">?</a>
           <br />
-          <div class="img-polaroid">imagen<br />imagen<br />imagen<br />  imagen<br />imagen<br /></div>
+          <div id="img-mano" class="img-polaroid">imagen<br />imagen<br />imagen<br />  imagen<br />imagen<br /></div>
+          <div id="img-handicap" class="img-polaroid">imagen<br />imagen<br />imagen<br />  imagen<br />imagen<br /></div>
       </div>
     </div>
     

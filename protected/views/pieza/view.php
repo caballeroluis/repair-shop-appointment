@@ -33,5 +33,6 @@ $this->menu=array(
 		'observaciones',
 		'minutos_instalacion',
 		'informacion',
+		'categoria_pieza_id',
 	),
 )); ?>

@@ -71,6 +71,11 @@
 		<?php echo $form->textField($model,'informacion',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'categoria_pieza_id'); ?>
+		<?php echo $form->textField($model,'categoria_pieza_id'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
