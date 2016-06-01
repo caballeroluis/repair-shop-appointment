@@ -83,6 +83,7 @@ CREATE TABLE IF NOT EXISTS `web`.`cita` (
   `cliente_id` INT NOT NULL DEFAULT 1,
   `id` INT NOT NULL AUTO_INCREMENT,
   `prioridad` INT NULL,
+  `comentarios_cliente` VARCHAR(255) NULL,
   INDEX `fk_cita_estado1_idx` (`estado_id` ASC),
   INDEX `fk_cita_cliente1_idx` (`cliente_id` ASC),
   UNIQUE INDEX `fecha_cita_UNIQUE` (`fecha_cita` ASC),
@@ -151,12 +152,12 @@ CREATE TABLE IF NOT EXISTS `web`.`pieza` (
   `fecha_creacion` DATETIME NULL,
   `fecha_modificacion` DATETIME NULL,
   `vivo` TINYINT(1) NULL DEFAULT 1 COMMENT 'campo que dice si esta no borrado o borrado el registro',
-  `marca_pieza_id` INT NOT NULL,
+  `marca_pieza_id` INT NOT NULL DEFAULT 1,
   `imagen` VARCHAR(255) NULL,
   `observaciones` VARCHAR(255) NULL,
   `minutos_instalacion` INT NULL COMMENT 'campo por si acaso',
   `informacion` VARCHAR(255) NULL COMMENT 'info sobre la pieza que se le mostrara al cliente',
-  `categoria_pieza_id` INT NOT NULL,
+  `categoria_pieza_id` INT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_pieza_marca_pieza1_idx` (`marca_pieza_id` ASC),
   UNIQUE INDEX `nombre_UNIQUE` (`nombre` ASC),
@@ -333,3 +334,17 @@ INSERT INTO `otro` (`nombre`, `valor`, `vivo`, `fecha_creacion`, `fecha_modifica
 
 INSERT INTO `estado` (`id`, `nombre`) VALUES
 (1, 'desatendida');
+
+--
+-- Volcado de datos para la tabla `marca_pieza`
+--
+
+INSERT INTO `marca_pieza` (`id`, `nombre`) VALUES
+(1, 'sin-marca');
+
+--
+-- Volcado de datos para la tabla `categoria_pieza`
+--
+
+INSERT INTO `categoria_pieza` (`id`, `nombre`) VALUES
+(1, 'sin-categoria');

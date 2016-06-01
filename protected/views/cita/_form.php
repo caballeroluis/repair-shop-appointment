@@ -85,6 +85,12 @@
 		<?php echo $form->error($model,'prioridad'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'comentarios_cliente'); ?>
+		<?php echo $form->textField($model,'comentarios_cliente',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'comentarios_cliente'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

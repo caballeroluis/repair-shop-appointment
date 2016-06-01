@@ -33,5 +33,6 @@ $this->menu=array(
 		'cliente_id',
 		'id',
 		'prioridad',
+		'comentarios_cliente',
 	),
 )); ?>

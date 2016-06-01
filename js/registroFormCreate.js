@@ -30,6 +30,7 @@ $('#validar-pass').click(function(){ //funcion que valida las pass crudas
           $('#div-validar-pass').slideUp();
           $('#miPassword').css({'background-color': '#E6EFC2', 'border-color': '#C6D880'});
           $('#repetirMiPassword').css({'background-color': '#E6EFC2', 'border-color': '#C6D880'});
+          alerta2('Las contraseñas han sido validadas y encriptadas con sha-256', 4000);
           $('#RegistroForm_password').val(encriptar($('#miPassword').val()));
           $('#RegistroForm_repetir_password').val(encriptar($('#repetirMiPassword').val()));
           $('#miPassword').val(encriptar($('#miPassword').val()));
@@ -57,12 +58,23 @@ function encriptar(pass){ //funcion que encripta una pass en SHA-512 en cliente 
 var duracionGlobal = 9000;
 
 function alerta(texto, duracion) { //funcion para hacer los alerts bonitos
-  $('.alerta').html(texto + '<a class="close" title="close">x</a>');
-  $('.alerta').slideDown('fast');
-  $('.alerta').click(function(){
+  $('.alert-danger').html(texto + '<a class="close" title="close">x</a>');
+  $('.alert-danger').slideDown('fast');
+  $('.alert-danger').click(function(){
     $(this).slideUp(100);
   });
   setTimeout(function() {
-    $('.alerta').slideUp('slow');
+    $('.alert-danger').slideUp('slow');
+  }, duracion);
+}
+
+function alerta2(texto, duracion) { //funcion para hacer los alerts bonitos
+  $('.alert-info').html(texto + '<a class="close" title="close">x</a>');
+  $('.alert-info').slideDown('fast');
+  $('.alert-info').click(function(){
+    $(this).slideUp(100);
+  });
+  setTimeout(function() {
+    $('.alert-info').slideUp('slow');
   }, duracion);
 }

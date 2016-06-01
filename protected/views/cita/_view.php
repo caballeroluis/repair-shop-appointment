@@ -54,6 +54,10 @@
 	<?php echo CHtml::encode($data->prioridad); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('comentarios_cliente')); ?>:</b>
+	<?php echo CHtml::encode($data->comentarios_cliente); ?>
+	<br />
+
 	*/ ?>
 
 </div>

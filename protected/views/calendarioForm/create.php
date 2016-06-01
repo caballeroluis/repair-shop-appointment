@@ -4,11 +4,6 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<style type="text/css">
-  #page {
-    padding: 0;
-  }
-</style>
 
 <div class="container">
   <div class="row">
@@ -98,9 +93,3 @@ $this->breadcrumbs = array(
 
 
 <script src="/web/js/registroFormCreate.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    alerta('asdf', 322);
-  });
-</script>

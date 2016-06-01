@@ -41,7 +41,6 @@ class Pieza extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('marca_pieza_id, categoria_pieza_id', 'required'),
 			array('precio, precio_instalar, vivo, marca_pieza_id, minutos_instalacion, categoria_pieza_id', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>45),
 			array('imagen, observaciones, informacion', 'length', 'max'=>255),

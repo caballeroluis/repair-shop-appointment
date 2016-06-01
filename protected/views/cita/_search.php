@@ -71,6 +71,11 @@
 		<?php echo $form->textField($model,'prioridad'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'comentarios_cliente'); ?>
+		<?php echo $form->textField($model,'comentarios_cliente',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
