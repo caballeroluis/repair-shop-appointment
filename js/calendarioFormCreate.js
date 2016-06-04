@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  traerDatosIniciales();
+//  traerDatosIniciales();
 });
 
 var duracionGlobal = 9000;
@@ -23,24 +23,24 @@ function alerta3(texto) { //funcion para hacer los alerts bonitos
   });
 }
 
-var datosIniciales = {};
-
-function traerDatosIniciales(){
-  $.ajax({
-      url: 'calendarioForm/traerDatosIniciales',
-      type: 'POST',
-      success: function (obj) {
-        datosIniciales = obj;
-      },
-      error: function (e) {
-        console.log(e);
-      }
-  });
-}
-
-function pintarDatosIniciales(){
-  $.each(JSON.parse(datosIniciales), function(i, tabla){
-    console.log(i );
-    return false;
-  });
-}
+//var datosIniciales = {};
+//
+//function traerDatosIniciales(){
+//  $.ajax({
+//      url: 'calendarioForm/traerDatosIniciales',
+//      type: 'POST',
+//      success: function (obj) {
+//        datosIniciales = obj;
+//      },
+//      error: function (e) {
+//        console.log(e);
+//      }
+//  });
+//}
+//
+//function pintarDatosIniciales(){
+//  $.each(JSON.parse(datosIniciales), function(i, tabla){
+//    console.log(i );
+//    return false;
+//  });
+//}
