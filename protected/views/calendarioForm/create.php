@@ -2,8 +2,44 @@
 $this->breadcrumbs = array(
     'Calendario',
 );
-?>
 
+$mano = Yii::app()->db->createCommand(
+        "SELECT id, nombre, coste, minutos_duracion, imagen, informacion "
+        . "FROM mano "
+        . "WHERE vivo = 1"
+)->query();
+
+$handicap = Yii::app()->db->createCommand(
+        "SELECT id, nombre, recargo, minutos_duracion, imagen, informacion, mano_id "
+        . "FROM handicap "
+        . "WHERE vivo = 1"
+)->query();
+
+$pieza = Yii::app()->db->createCommand(
+        "SELECT id, nombre, precio, precio_instalar, marca_pieza_id, imagen, minutos_instalacion, informacion, categoria_pieza_id "
+        . "FROM pieza "
+        . "WHERE vivo = 1"
+)->query();
+
+$categoria_pieza = Yii::app()->db->createCommand(
+        "SELECT id, nombre, imagen "
+        . "FROM categoria_pieza "
+        . "WHERE vivo = 1"
+)->query();
+
+$marca_pieza = Yii::app()->db->createCommand(
+        "SELECT id, nombre, imagen "
+        . "FROM marca_pieza "
+        . "WHERE vivo = 1"
+)->query();
+
+$cita = Yii::app()->db->createCommand(
+        "SELECT id, fecha_cita, fecha_cal_recogida, comentarios_cliente, datediff(fecha_cita, fecha_cal_recogida) AS duracion "
+        . "FROM cita "
+        . "WHERE vivo = 1"
+)->query();
+?>
+<div class="alert alert-info alerta" style="background-color: #E6EFC2; color: black"></div>
 
 <div class="container">
   <div class="row">
@@ -13,11 +49,20 @@ $this->breadcrumbs = array(
         <fieldset>
           <label for="select-mano">¿Qué desea hacer?</label>
           <select id="select-mano">
-            <option>revision completa</option>
-            <option>revision estandar</option>
-            <option>ajuste de frenos</option>
+            <?php
+            foreach($mano as $i => $campo){
+              echo '<option value="'.($i + 1).'" data-info="'.$campo['informacion'].'">'.$campo['nombre'].' '.$campo['coste'].'€</option>';
+            }
+            ?>
           </select>
-          <a href="#" class="btn">?</a>
+          <a href="#" onclick="alerta3(
+            $('#select-mano > option').eq(
+              document.getElementById('select-mano').selectedIndex
+            ).html() + ' : ' +
+            $('#select-mano > option').eq(
+              document.getElementById('select-mano').selectedIndex
+            ).attr('data-info')
+          );" class="btn">?</a>
           
           <label for="select-handicap">¿Qué tipo de xxx tiene?</label>
           <select id="select-handicap">

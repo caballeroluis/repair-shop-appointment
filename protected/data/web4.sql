@@ -314,7 +314,6 @@ INSERT INTO `cliente` (`id`, `nombre`, `apellido1`, `apellido2`, `telefono`, `co
 (1, 'admin', '', '', 913333333, 28033, 'admin@admin.es', '2016-01-10 00:00:00', '2016-01-10 00:00:00', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', 1, '', 'adminadmin', 0, 'admin', 'nunca modificar el username admin');
 
 
-
 --
 -- Volcado de datos para la tabla `otro`
 --
@@ -368,6 +367,26 @@ INSERT INTO `handicap` (`nombre`, `recargo`, `minutos_duracion`, `informacion`, 
 ('handicapDosPara2', 2, 2, 'infromacion sobre handicap dos', 2),
 ('handicapTresPara3', 3, 3, 'infromacion sobre handicap tres', 3),
 ('handicapCuatroPara3', 4, 4, 'infromacion sobre handicap cuatro', 3)
+;
+
+--
+-- Volcado de datos para la tabla `cita`
+--
+
+INSERT INTO `cita` (`fecha_cita`, `fecha_cal_recogida`, `precio_cal`, `estado_id`, `cliente_id`, `comentarios_cliente`) VALUES
+('2016-12-30 21:00:00', '2016-12-30 21:30:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 1'),
+('2016-12-30 21:30:00', '2016-12-30 22:00:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 2'),
+('2016-12-30 22:00:00', '2016-12-30 22:30:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 3')
+;
+
+--
+-- Volcado de datos para la tabla `pieza`
+--
+
+INSERT INTO `pieza` (`nombre`, `precio`, `precio_instalar`, `marca_pieza_id`, `imagen`, `minutos_instalacion`, `informacion`, `categoria_pieza_id`) VALUES
+('piezaUno', 100, 10, 1, 'imagen/pieza1.jpg', 10, 'info de la pieza 1', 1),
+('piezaDos', 200, 20, 1, 'imagen/pieza2.jpg', 20, 'info de la pieza 2', 1),
+('piezaTres', 300, 30, 1, 'imagen/pieza3.jpg', 30, 'info de la pieza 3', 1)
 ;
 
 
