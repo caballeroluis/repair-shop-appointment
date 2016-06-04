@@ -29,7 +29,7 @@ class CalendarioFormController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create'),
+				'actions'=>array('create', 'traerDatos'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -163,4 +163,23 @@ class CalendarioFormController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        
+        //mis acciones
+        
+        
+        public function actionTraerDatos() { //accion en obras
+          $outputDatos = array(
+            'mano' => Yii::app()->db->createCommand("SELECT * FROM mano")->queryRow(),
+            'handicap' => Yii::app()->db->createCommand("SELECT * FROM cliente")->queryRow(),
+            'categoria' => Yii::app()->db->createCommand("SELECT * FROM cliente")->queryRow(),
+            'pieza' => Yii::app()->db->createCommand("SELECT * FROM cliente")->queryRow(),
+            'cita' => Yii::app()->db->createCommand("SELECT * FROM cliente")->queryRow(),
+          );
+          
+          
+          header('Coarray_pusntent-type: application/json');
+          echo CJSON::encode($outputDatos);
+        }
+
 }

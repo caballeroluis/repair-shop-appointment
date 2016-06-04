@@ -348,3 +348,34 @@ INSERT INTO `marca_pieza` (`id`, `nombre`) VALUES
 
 INSERT INTO `categoria_pieza` (`id`, `nombre`) VALUES
 (1, 'sin-categoria');
+
+
+--
+-- Volcado de datos para la tabla `mano`
+--
+
+INSERT INTO `mano` (`nombre`, `coste`, `minutos_duracion`, `informacion`) VALUES
+('manoUno', 1, 1, 'infromacion sobre la mano nuno'),
+('manoDos', 2, 2, 'infromacion sobre la mano dos'),
+('manoTres', 3, 3, 'infromacion sobre la mano tres');
+
+--
+-- Volcado de datos para la tabla `handicap`
+--
+
+INSERT INTO `handicap` (`nombre`, `recargo`, `minutos_duracion`, `informacion`, `mano_id`) VALUES
+('handicapUnoPara1', 1, 1, 'infromacion sobre handicap nuno', 1),
+('handicapDosPara2', 2, 2, 'infromacion sobre handicap dos', 2),
+('handicapTresPara3', 3, 3, 'infromacion sobre handicap tres', 3),
+('handicapCuatroPara3', 4, 4, 'infromacion sobre handicap cuatro', 3)
+;
+
+
+--
+-- Creado de usuario `web`
+--
+
+DROP USER IF EXISTS 'web'@'localhost';
+CREATE USER 'web'@'localhost' IDENTIFIED BY 'web';
+GRANT ALL PRIVILEGES ON `web`.* TO 'web'@'localhost';
+FLUSH PRIVILEGES;

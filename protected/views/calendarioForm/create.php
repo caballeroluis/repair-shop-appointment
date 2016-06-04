@@ -92,4 +92,4 @@ $this->breadcrumbs = array(
 </div>
 
 
-<script src="/web/js/registroFormCreate.js" type="text/javascript"></script>
+<script src="/web/js/calendarioFormCreate.js" type="text/javascript"></script>
