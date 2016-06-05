@@ -29,7 +29,7 @@ class CalendarioFormController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create', 'traerDatosIniciales'),
+				'actions'=>array('create', 'refrescarHandicap'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -168,49 +168,17 @@ class CalendarioFormController extends Controller
         //mis acciones
         
         
-//        public function actionTraerDatosIniciales() {
-//          $datosIniciales = array(
-//            'mano' => Yii::app()->db->createCommand(
-//                    "SELECT id, nombre, coste, minutos_duracion, imagen, informacion "
-//                    . "FROM mano "
-//                    . "WHERE vivo = 1"
-//            )->query(),
-//            
-//            'handicap' => Yii::app()->db->createCommand(
-//                    "SELECT id, nombre, recargo, minutos_duracion, imagen, informacion, mano_id "
-//                    . "FROM handicap "
-//                    . "WHERE vivo = 1"
-//            )->query(),
-//            
-//            'pieza' => Yii::app()->db->createCommand(
-//                    "SELECT id, nombre, precio, precio_instalar, marca_pieza_id, imagen, minutos_instalacion, informacion, categoria_pieza_id "
-//                    . "FROM pieza "
-//                    . "WHERE vivo = 1"
-//            )->query(),
-//            
-//            'categoria_pieza' => Yii::app()->db->createCommand(
-//                    "SELECT id, nombre, imagen "
-//                    . "FROM categoria_pieza "
-//                    . "WHERE vivo = 1"
-//            )->query(),
-//            
-//            'marca_pieza' => Yii::app()->db->createCommand(
-//                    "SELECT id, nombre, imagen "
-//                    . "FROM marca_pieza "
-//                    . "WHERE vivo = 1"
-//            )->query(),
-//            
-//            'cita' => Yii::app()->db->createCommand(
-//                    "SELECT id, fecha_cita, fecha_cal_recogida, comentarios_cliente, datediff(fecha_cita, fecha_cal_recogida) AS duracion "
-//                    . "FROM cita "
-//                    . "WHERE vivo = 1"
-//            )->query(),
-//            
-//          );
-//          
-//          
-//          header('Coarray_pusntent-type: application/json');
-//          echo CJSON::encode(array('datosIniciales' => $datosIniciales));
-//        }
+        public function actionRefrescarHandicap() {
+          $sI = $_POST['sI'];
+          $handicap = Yii::app()->db->createCommand(
+                  "SELECT id, nombre, recargo, minutos_duracion, imagen, informacion, mano_id "
+                  . "FROM handicap "
+                  . "WHERE vivo = 1 AND "
+                  . "mano_id = $sI"
+          )->query();
+            
+          header('Coarray_pusntent-type: application/json');
+          echo CJSON::encode($handicap);
+        }
 
 }

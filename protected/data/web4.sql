@@ -345,28 +345,33 @@ INSERT INTO `marca_pieza` (`id`, `nombre`) VALUES
 -- Volcado de datos para la tabla `categoria_pieza`
 --
 
-INSERT INTO `categoria_pieza` (`id`, `nombre`) VALUES
-(1, 'sin-categoria');
+INSERT INTO `categoria_pieza` (`nombre`) VALUES
+('catUno'),
+('catDos'),
+('catTres'),
+('catCuatro')
+;
 
 
 --
 -- Volcado de datos para la tabla `mano`
 --
 
-INSERT INTO `mano` (`nombre`, `coste`, `minutos_duracion`, `informacion`) VALUES
-('manoUno', 1, 1, 'infromacion sobre la mano nuno'),
-('manoDos', 2, 2, 'infromacion sobre la mano dos'),
-('manoTres', 3, 3, 'infromacion sobre la mano tres');
+INSERT INTO `mano` (`nombre`, `coste`, `minutos_duracion`, `informacion`, `imagen`) VALUES
+('Pinchazos', 1, 1, 'infromacion sobre la mano nuno', '/web/images/mano/mano-1.jpg'),
+('Limpieza', 2, 2, 'infromacion sobre la mano dos', '/web/images/mano/mano-2.jpg'),
+('Ajuste de freno', 3, 3, 'infromacion sobre la mano tres', '/web/images/mano/mano-3.jpg')
+;
 
 --
 -- Volcado de datos para la tabla `handicap`
 --
 
-INSERT INTO `handicap` (`nombre`, `recargo`, `minutos_duracion`, `informacion`, `mano_id`) VALUES
-('handicapUnoPara1', 1, 1, 'infromacion sobre handicap nuno', 1),
-('handicapDosPara2', 2, 2, 'infromacion sobre handicap dos', 2),
-('handicapTresPara3', 3, 3, 'infromacion sobre handicap tres', 3),
-('handicapCuatroPara3', 4, 4, 'infromacion sobre handicap cuatro', 3)
+INSERT INTO `handicap` (`nombre`, `recargo`, `minutos_duracion`, `informacion`, `mano_id`, `imagen`) VALUES
+('Tubulares', 1, 1, 'infromacion sobre handicap nuno', 1, '/web/images/handicap/handicap-1.jpg'),
+('Freno disco', 2, 2, 'infromacion sobre handicap dos', 3, '/web/images/handicap/handicap-2.jpg'),
+('Freno tambor', 3, 3, 'infromacion sobre handicap tres', 3, '/web/images/handicap/handicap-3.jpg'),
+('Freno hidráulico', 4, 4, 'infromacion sobre handicap cuatro', 3, '/web/images/handicap/handicap-4.jpg')
 ;
 
 --

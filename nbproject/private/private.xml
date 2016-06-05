@@ -5,9 +5,12 @@
         <group>
             <file>file:/C:/xampp/htdocs/web/protected/models/CalendarioForm.php</file>
             <file>file:/C:/xampp/htdocs/web/protected/views/calendarioForm/create.php</file>
+            <file>file:/C:/xampp/htdocs/web/protected/runtime/application.log</file>
             <file>file:/C:/xampp/htdocs/web/protected/controllers/CalendarioFormController.php</file>
             <file>file:/C:/xampp/htdocs/web/js/calendarioFormCreate.js</file>
             <file>file:/C:/xampp/htdocs/web/protected/data/web4.sql</file>
+            <file>file:/C:/xampp/htdocs/web/js/registroFormCreate.js</file>
+            <file>file:/C:/xampp/htdocs/web/protected/views/registroForm/create.php</file>
         </group>
     </open-files>
 </project-private>

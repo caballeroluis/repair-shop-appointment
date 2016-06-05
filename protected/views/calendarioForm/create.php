@@ -51,29 +51,36 @@ $cita = Yii::app()->db->createCommand(
           <select id="select-mano">
             <?php
             foreach($mano as $i => $campo){
-              echo '<option value="'.($i + 1).'" data-info="'.$campo['informacion'].'">'.$campo['nombre'].' '.$campo['coste'].'€</option>';
+              echo '<option value="'.($i + 1).'" data-informacion="'.$campo['informacion'].'" data-imagen="'.$campo['imagen'].'">'.$campo['nombre'].' '.$campo['coste'].'€</option>';
             }
             ?>
           </select>
           <a href="#" onclick="alerta3(
             $('#select-mano > option').eq(
-              document.getElementById('select-mano').selectedIndex
+              $('#select-mano').prop('selectedIndex')
             ).html() + ' : ' +
             $('#select-mano > option').eq(
-              document.getElementById('select-mano').selectedIndex
-            ).attr('data-info')
+              $('#select-mano').prop('selectedIndex')
+            ).attr('data-informacion')
           );" class="btn">?</a>
           
-          <label for="select-handicap">¿Qué tipo de xxx tiene?</label>
-          <select id="select-handicap">
-            <option>Freno tampor</option>
-            <option>Freno hidráulico</option>
-            <option>Freno zapata</option>
-          </select>  
-          <a href="#" class="btn">?</a>
+          <label for="select-handicap">¿Qué características tiene su bicicleta?</label>
+          <select id="select-handicap"></select>  
+          <a href="#" onclick="alerta3(
+            $('#select-handicap > option').eq(
+              $('#select-handicap').prop('selectedIndex')
+            ).html() + ' : ' +
+            $('#select-handicap > option').eq(
+              $('#select-handicap').prop('selectedIndex')
+            ).attr('data-informacion')
+          );" class="btn">?</a>
           <br />
-          <div id="img-mano" class="img-polaroid">imagen<br />imagen<br />imagen<br />  imagen<br />imagen<br /></div>
-          <div id="img-handicap" class="img-polaroid">imagen<br />imagen<br />imagen<br />  imagen<br />imagen<br /></div>
+          <div class="img-polaroid">
+            <img id="img-mano" />
+          </div>
+          <div class="img-polaroid">
+            <img id="img-handicap" />
+          </div>
       </div>
     </div>
     
@@ -82,9 +89,11 @@ $cita = Yii::app()->db->createCommand(
         <fieldset>
           <label for="select-familia">¿Necesita algo más?</label>
           <select id="select-familia">
-            <option>Cable</option>
-            <option>Zapata</option>
-            <option>Cadena</option>
+            <?php
+            foreach($categoria_pieza as $i => $campo){
+              echo '<option value="'.($i + 1).'">'.$campo['nombre'].'</option>';
+            }
+            ?>
           </select>
           
           <label for="select-pieza">¿Qué tipo de xxx necesita?</label>
