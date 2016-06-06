@@ -15,11 +15,11 @@ $handicap = Yii::app()->db->createCommand(
         . "WHERE vivo = 1"
 )->query();
 
-$pieza = Yii::app()->db->createCommand(
-        "SELECT id, nombre, precio, precio_instalar, marca_pieza_id, imagen, minutos_instalacion, informacion, categoria_pieza_id "
-        . "FROM pieza "
-        . "WHERE vivo = 1"
-)->query();
+//$pieza = Yii::app()->db->createCommand(
+//        "SELECT id, nombre, precio, precio_instalar, marca_pieza_id, imagen, minutos_instalacion, informacion, categoria_pieza_id "
+//        . "FROM pieza "
+//        . "WHERE vivo = 1"
+//)->query();
 
 $categoria_pieza = Yii::app()->db->createCommand(
         "SELECT id, nombre, imagen "
@@ -33,13 +33,13 @@ $marca_pieza = Yii::app()->db->createCommand(
         . "WHERE vivo = 1"
 )->query();
 
-$cita = Yii::app()->db->createCommand(
-        "SELECT id, fecha_cita, fecha_cal_recogida, comentarios_cliente, datediff(fecha_cita, fecha_cal_recogida) AS duracion "
-        . "FROM cita "
-        . "WHERE vivo = 1"
-)->query();
+//$cita = Yii::app()->db->createCommand(
+//        "SELECT id, fecha_cita, fecha_cal_recogida, comentarios_cliente, datediff(fecha_cita, fecha_cal_recogida) AS duracion "
+//        . "FROM cita "
+//        . "WHERE vivo = 1"
+//)->query();
 ?>
-<div class="alert alert-info alerta" style="background-color: #E6EFC2; color: black"></div>
+<div id="alerta-info2" class="alert alert-info alerta" style="background-color: #E6EFC2; color: black"></div>
 
 <div class="container">
   <div class="row">

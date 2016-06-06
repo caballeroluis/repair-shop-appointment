@@ -69,12 +69,12 @@ function alerta(texto, duracion) { //funcion para hacer los alerts bonitos
 }
 
 function alerta2(texto, duracion) { //funcion para hacer los alerts bonitos
-  $('.alert-info').html(texto + '<a class="close" title="close">x</a>');
-  $('.alert-info').slideDown('fast');
-  $('.alert-info').click(function(){
+  $('#alerta-info2').html(texto + '<a class="close" title="close">x</a>');
+  $('#alerta-info2').slideDown('fast');
+  $('#alerta-info2').click(function(){
     $(this).slideUp(100);
   });
   setTimeout(function() {
-    $('.alert-info').slideUp('slow');
+    $('#alerta-info2').slideUp('slow');
   }, duracion);
 }

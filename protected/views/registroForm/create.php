@@ -158,7 +158,7 @@ $this->breadcrumbs=array(
 
 
 <div class="alert alert-danger alerta"></div>
-<div class="alert alert-info alerta" style="background-color: #E6EFC2; color: black"></div>
+<div id="alerta-info2" class="alert alert-info alerta" style="background-color: #E6EFC2; color: black"></div>
 
 
 

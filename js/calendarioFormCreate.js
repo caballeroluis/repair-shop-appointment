@@ -17,9 +17,9 @@ function alerta(texto, duracion) { //funcion para hacer los alerts bonitos
 }
 
 function alerta3(texto) { //funcion para hacer los alerts bonitos
-  $('.alert-info').html(texto + '<a class="close" title="close">x</a>');
-  $('.alert-info').slideDown('fast');
-  $('.alert-info').click(function(){
+  $('#alerta-info2').html(texto + '<a class="close" title="close">x</a>');
+  $('#alerta-info2').slideDown('fast');
+  $('#alerta-info2').click(function(){
     $(this).slideUp(100);
   });
 }
@@ -33,10 +33,6 @@ $('#select-handicap').change(function(){
   } else {
     $('#img-handicap').attr('src', ruta);
   }
-  var info = $('#select-handicap > option').eq(
-    $('#select-handicap').prop('selectedIndex')
-  ).attr('data-informacion');
-  
 });
 
 $('#select-mano').change(function(){
