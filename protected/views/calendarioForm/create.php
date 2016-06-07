@@ -87,8 +87,8 @@ $marca_pieza = Yii::app()->db->createCommand(
     <div id="box2" class="span6 ">
       <div class="caja-gris"><!-- box 1 -->
         <fieldset>
-          <label for="select-familia">¿Necesita algo más?</label>
-          <select id="select-familia">
+          <label for="select-categoria_pieza">¿Necesita algo más?</label>
+          <select id="select-categoria_pieza">
             <?php
             foreach($categoria_pieza as $i => $campo){
               echo '<option value="'.($i + 1).'">'.$campo['nombre'].'</option>';
@@ -96,13 +96,18 @@ $marca_pieza = Yii::app()->db->createCommand(
             ?>
           </select>
           
-          <label for="select-pieza">¿Qué tipo de xxx necesita?</label>
+          <label for="select-pieza">¿Qué tipo de pieza necesita?</label>
           <select id="select-pieza">
-            <option>Cadena estandar 7 €</option>
-            <option>Cadena1  2 €</option>
-            <option>Cadena2  4 €</option>
+            <!--<option>(id) nombre marca() precioInstalada() (imagen) (minutos_instalacion) (informacion)</option>-->
           </select>
-          <a href="#" class="btn">?</a>
+          <a href="#" onclick="alerta3(
+            $('#select-pieza > option').eq(
+              $('#select-pieza').prop('selectedIndex')
+            ).html() + ' : ' +
+            $('#select-pieza > option').eq(
+              $('#select-pieza').prop('selectedIndex')
+            ).attr('data-informacion')
+          );" class="btn">?</a>
           <br />
           <div class="img-polaroid">imagen<br />imagen<br />imagen<br />  imagen<br />imagen<br /></div>
           <br />

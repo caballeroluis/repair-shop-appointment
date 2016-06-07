@@ -1,5 +1,6 @@
 $(document).ready(function(){
   $('#select-mano').change();
+  $('#select-categoria_pieza').change();
   
 });
 
@@ -42,6 +43,9 @@ $('#select-mano').change(function(){
       dataType: 'JSON',
       url: 'calendarioForm/refrescarHandicap',
       type: 'POST',
+      submit: function(){
+        $('#select-handicap').change();
+      },
       success: function (obj) {
         //actualizo dropdown handicap
         $('#select-handicap').html('');
@@ -60,6 +64,39 @@ $('#select-mano').change(function(){
         $('#img-mano').attr('src', ruta);
         ruta = '';
         $('#select-handicap').change();
+      },
+      error: function (e) {
+        console.log(e);
+        $('#select-handicap').change();
+      }
+  });
+});
+
+$('#select-categoria_pieza').change(function(){
+  var sI = $('#select-categoria_pieza').val();
+  $.ajax({
+      data: {'sI': sI},
+      dataType: 'JSON',
+      url: 'calendarioForm/refrescarPieza',
+      type: 'POST',
+      success: function (obj) {
+        //actualizo dropdown pieza
+        $('#select-pieza').html('');
+        $.each(obj, function(i, tupla){
+          $('#select-pieza').html(
+            $('#select-pieza').html() +
+            '<option value="'+(i + 1)+'" data-minutos_duracion="'+tupla.minutos_duracion+'" data-imagen="'
+            +tupla.imagen+'" data-mano_id="'+tupla.mano_id+'" data-informacion="'+tupla.informacion+'">'
+            +tupla.nombre+' '+tupla.recargo+'€</option>'
+          );
+        });
+        //actualizo imagen mano
+        var ruta = $('#select-pieza > option').eq(
+          $('#select-pieza').prop('selectedIndex')
+        ).attr('data-imagen');
+        $('#img-pieza').attr('src', ruta);
+        ruta = '';
+        $('#select-pieza').change();
       },
       error: function (e) {
         console.log(e);

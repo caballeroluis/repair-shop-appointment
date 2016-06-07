@@ -29,7 +29,7 @@ class CalendarioFormController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create', 'refrescarHandicap'),
+				'actions'=>array('create', 'refrescarHandicap', 'refrescarPieza'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -179,6 +179,21 @@ class CalendarioFormController extends Controller
             
           header('Coarray_pusntent-type: application/json');
           echo CJSON::encode($handicap);
+        }
+        
+        public function actionRefrescarPieza() {
+          $sI = $_POST['sI'];
+          $consulta = <<<HEREDOC
+SELECT id, nombre, precio, precio_instalar, marca_pieza_id, imagen, minutos_instalacion, informacion
+FROM pieza
+WHERE vivo = 1
+AND categoria_pieza_id = $sI;
+HEREDOC;
+          $pieza = Yii::app()->db->createCommand($consulta)->query();
+
+          
+          header('Coarray_pusntent-type: application/json');
+          echo CJSON::encode($pieza);
         }
 
 }
