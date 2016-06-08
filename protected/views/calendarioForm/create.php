@@ -97,7 +97,7 @@ $marca_pieza = Yii::app()->db->createCommand(
           </select>
           
           <label for="select-pieza">¿Qué tipo de pieza necesita?</label>
-          <select id="select-pieza">
+          <select id="select-pieza" style="width: 80%">
             <!--<option>(id) nombre marca() precioInstalada() (imagen) (minutos_instalacion) (informacion)</option>-->
           </select>
           <a href="#" onclick="alerta3(
@@ -109,13 +109,17 @@ $marca_pieza = Yii::app()->db->createCommand(
             ).attr('data-informacion')
           );" class="btn">?</a>
           <br />
-          <div class="img-polaroid">imagen<br />imagen<br />imagen<br />  imagen<br />imagen<br /></div>
+          <div class="img-polaroid">
+            <img id="img-pieza" />
+          </div>
           <br />
-          Cantidad: <input type="number" value="1" />
-          <a href="#" class="btn btn-primary">Añadir</a>
+          Cantidad: <input id="cantidad" type="number" value="1" />
+          <a href="#" id="aniadir" class="btn btn-primary">Añadir</a>
           <br />
-          Lista de añadidos: <div class="img-polaroid">pieza<br />pieza<br />pieza<br /></div>
-          <a href="#" class="btn btn-primary">Limpiar lista</a>
+          Lista de añadidos:
+          <select id="select-aniadir" multiple style="width: 100%"></select>
+          </div>
+      <a href="#" id="limpiar" class="btn btn-primary">Limpiar lista</a>
       </div>
     </div>
     

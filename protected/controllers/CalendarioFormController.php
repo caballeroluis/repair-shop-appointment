@@ -184,11 +184,19 @@ class CalendarioFormController extends Controller
         public function actionRefrescarPieza() {
           $sI = $_POST['sI'];
           $consulta = <<<HEREDOC
-SELECT id, nombre, precio, precio_instalar, marca_pieza_id, imagen, minutos_instalacion, informacion
+SELECT pieza.id, pieza.nombre, precio, precio_instalar, (
+  SELECT marca_pieza.nombre
+  FROM marca_pieza
+  WHERE marca_pieza.id = pieza.id
+  AND marca_pieza.vivo = 1
+) AS marca, imagen, minutos_instalacion, informacion, (
+  precio + precio_instalar
+) AS precio_instalado
 FROM pieza
 WHERE vivo = 1
 AND categoria_pieza_id = $sI;
 HEREDOC;
+  //aquí hay un par de subselets, la primera para buscar la marca y la segunda para calcular el precio de la pieza con la instalación
           $pieza = Yii::app()->db->createCommand($consulta)->query();
 
           

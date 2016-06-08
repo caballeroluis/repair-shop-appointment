@@ -85,12 +85,12 @@ $('#select-categoria_pieza').change(function(){
         $.each(obj, function(i, tupla){
           $('#select-pieza').html(
             $('#select-pieza').html() +
-            '<option value="'+(i + 1)+'" data-minutos_duracion="'+tupla.minutos_duracion+'" data-imagen="'
-            +tupla.imagen+'" data-mano_id="'+tupla.mano_id+'" data-informacion="'+tupla.informacion+'">'
-            +tupla.nombre+' '+tupla.recargo+'€</option>'
+            '<option value="'+(i + 1)+'" data-id="'+tupla.id+'" data-minutos_instalacion="'+tupla.minutos_instalacion+'" data-imagen="'
+            +tupla.imagen+'" data-informacion="'+tupla.informacion+'">'
+            +tupla.nombre+' '+tupla.marca+' '+tupla.precio_instalado+'€</option>'
           );
         });
-        //actualizo imagen mano
+        //actualizo imagen pieza
         var ruta = $('#select-pieza > option').eq(
           $('#select-pieza').prop('selectedIndex')
         ).attr('data-imagen');
@@ -102,4 +102,55 @@ $('#select-categoria_pieza').change(function(){
         console.log(e);
       }
   });
+});
+
+$('#select-pieza').change(function(){
+  var ruta = $('#select-pieza > option').eq(
+    $('#select-pieza').prop('selectedIndex')
+  ).attr('data-imagen');
+  if (ruta == undefined || ruta == null) {
+    $('#img-pieza').attr('src', '');
+  } else {
+    $('#img-pieza').attr('src', ruta);
+  }
+});
+
+
+function contarPiezasAniadidas(num){//pide id y dice cuántas veces lo encuentra
+  var contador = 0;
+  $.each($('#select-aniadir > option[data-id='+num+']'), function(i, opt){
+    contador++;
+  });
+  return contador;
+}
+
+$('#aniadir').click(function(){
+  var piezaElegida = $('#select-pieza > option').eq(
+    $('#select-pieza').prop('selectedIndex')
+  ).attr('data-id');
+  
+  
+  if (contarPiezasAniadidas(piezaElegida) > 0) {//si hay más de una no te deja meter más, te dice que uses las cantidades
+    alerta3('No puede volver a añadir esta pieza. Utilice el campo \"Cantidad\" para agregar más de una pieza del mismo tipo');
+  } else {
+    $('#select-aniadir').append(
+    $('#select-pieza > option').eq(
+      $('#select-pieza').prop('selectedIndex')
+    ).clone().attr('data-cantidad', $('#cantidad').val()).html(//añado...
+      
+      //lo que ya tenía
+      $('#select-pieza > option').eq(
+        $('#select-pieza').prop('selectedIndex')
+      ).clone().attr('data-cantidad', $('#cantidad').val()).html()
+      
+      //más la cantidad
+      + ' Cant: ' + $('#cantidad').val()
+    )
+    );
+  }
+  
+});
+
+$('#limpiar').click(function(){
+  $('#select-aniadir').html('');
 });

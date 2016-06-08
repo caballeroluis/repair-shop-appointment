@@ -395,11 +395,11 @@ INSERT INTO `cita` (`fecha_cita`, `fecha_cal_recogida`, `precio_cal`, `estado_id
 --
 
 INSERT INTO `pieza` (`nombre`, `precio`, `precio_instalar`, `marca_pieza_id`, `imagen`, `minutos_instalacion`, `informacion`, `categoria_pieza_id`) VALUES
-('piezaUno', 100, 10, 1, 'images/pieza/pieza-1.jpg', 10, 'info de la pieza 1', 1),
-('piezaDos', 200, 20, 2, 'images/pieza/pieza-2.jpg', 20, 'info de la pieza 2', 2),
-('piezaTres', 300, 30, 3, 'images/pieza/pieza-3.jpg', 30, 'info de la pieza 3', 3),
-('piezaCuatro', 400, 40, 2, 'images/pieza/pieza-4.jpg', 20, 'info de la pieza 4', 2),
-('piezaCinco', 500, 50, 2, 'images/pieza/pieza-5.jpg', 20, 'info de la pieza 5', 2)
+('piezaUno', 100, 10, 1, '/web/images/pieza/pieza-1.jpg', 10, 'info de la pieza 1', 1),
+('piezaDos', 200, 20, 2, '/web/images/pieza/pieza-2.jpg', 20, 'info de la pieza 2', 2),
+('piezaTres', 300, 30, 3, '/web/images/pieza/pieza-3.jpg', 30, 'info de la pieza 3', 3),
+('piezaCuatro', 400, 40, 2, '/web/images/pieza/pieza-4.jpg', 20, 'info de la pieza 4', 2),
+('piezaCinco', 500, 50, 2, '/web/images/pieza/pieza-5.jpg', 20, 'info de la pieza 5', 2)
 ;
 
 
@@ -407,7 +407,7 @@ INSERT INTO `pieza` (`nombre`, `precio`, `precio_instalar`, `marca_pieza_id`, `i
 -- Creado de usuario `web`
 --
 
-DROP USER IF EXISTS 'web'@'localhost';
-CREATE USER 'web'@'localhost' IDENTIFIED BY 'web';
+-- DROP USER IF EXISTS 'web'@'localhost';
+CREATE USER IF NOT EXISTS 'web'@'localhost' IDENTIFIED BY 'web';
 GRANT ALL PRIVILEGES ON `web`.* TO 'web'@'localhost';
 FLUSH PRIVILEGES;
