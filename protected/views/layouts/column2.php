@@ -20,3 +20,8 @@
 	</div><!-- sidebar -->
 </div>
 <?php $this->endContent(); ?>
+
+
+<script src="/web/js/updateCliente_form.js" type="text/javascript"></script>
+<script src="/web/js/encriptarSHA.js" type="text/javascript"></script>
+<script src="/web/protected/extensions/jsSHA/src/sha.js" type="text/javascript"></script>

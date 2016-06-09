@@ -57,7 +57,11 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
-
+<br />
+<br />
+Si no tiene una cuenta, puede crear una:
+<br />
+<button class="btn btn-primary" onclick="window.location = '/web/registro'" title="">Crear una cuenta</button>
 
 <!-- Importo mis scripts para encriptar contraseñas -->
 <script src="/web/js/login.js" type="text/javascript"></script>

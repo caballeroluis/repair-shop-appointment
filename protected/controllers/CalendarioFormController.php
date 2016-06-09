@@ -29,7 +29,7 @@ class CalendarioFormController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create', 'refrescarHandicap', 'refrescarPieza', 'consultarFecha'),
+				'actions'=>array('create', 'refrescarHandicap', 'refrescarPieza', 'consultarFecha', 'registrarSolicitud'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -204,7 +204,7 @@ HEREDOC;
           echo CJSON::encode($pieza);
         }
         
-        public function actionConsultarFecha() {
+        public function actionConsultarFecha() { //función que recibe la fecha solicitada por el usuario y devuelve si está o no ocupada
           $fecha = $_POST['fecha'];
           $estado = 'disponible';
           $consulta = <<<HEREDOC
@@ -216,17 +216,67 @@ HEREDOC;
           $cita = CJSON::encode($cita);
           $cita = CJSON::decode($cita);
           
-//          echo '<pre>';
           foreach($cita as $i => $campo) {
             if ($campo['fecha_cita'] == $fecha['fecha']) {
               $estado = 'no disponible';
               break;
             }
           }
-//          echo '</pre>';
           
           header('Coarray_pusntent-type: application/json');
           echo CJSON::encode(array('estado' => $estado));
+        }
+        
+        public function actionRegistrarSolicitud() { //función que recibe la fecha solicitada por el usuario y devuelve si está o no ocupada también graba la cita y actualizará las tablas cita_has_mano y cita_has_pieza
+          $estado = "Cita guardada";
+          
+          //datos recibidos
+          $fecha_cita = $_POST['fecha_cita'];
+          $duracion_total = $_POST['duracion_total'];
+            $fecha_cal_recogida;
+          $precio_cal = $_POST['precio_cal'];
+          $nombre_cliente = $_POST['nombre_cliente'];
+            $cliente_id;
+          $comentarios_clietne = $_POST['comentarios_cliente'];
+          
+          //acomoda id usuario (inicio)
+            //consulta para sacar el id de cliente 
+            $consulta = <<<HEREDOC
+SELECT `id`
+FROM `cliente`
+WHERE `vivo` = 1
+AND `nombre` = '$nombre_cliente';
+HEREDOC;
+            $consulta = Yii::app()->db->createCommand($consulta)->query();
+            $consulta = CJSON::encode($consulta);
+            $consulta = CJSON::decode($consulta);
+            $cliente_id = $consulta[0]['id'];
+          //acomoda id usuario (fin)
+          
+          //acomoda fecha recogida  (inicio) (le suma los minutos de duración de la reparación a la fecha de la cita
+            $fecha_cal_recogida = date('Y-m-d H:i:s', strtotime("+$duracion_total minute", strtotime($fecha_cita)));
+          //acomoda fecha recogida (fin)
+          
+          $consulta = <<<HEREDOC
+INSERT INTO `cita` (`fecha_cita`, `fecha_cal_recogida`, `precio_cal`, `cliente_id`, `comentarios_cliente`)
+VALUES (
+  '$fecha_cita',
+  '$fecha_cal_recogida',
+  $precio_cal,
+  $cliente_id,
+  '$comentarios_clietne'
+);
+HEREDOC;
+          Yii::app()->db->createCommand($consulta)->query();
+          
+          //pendiente rellenar cita_has_mano
+          
+          //pendiente rellenar cita_has_pieza
+          
+          
+            
+          header('Coarray_pusntent-type: application/json');
+          echo CJSON::encode(array('estado' => $estado, 'fecha_cita' => $fecha_cita));
         }
 
 }

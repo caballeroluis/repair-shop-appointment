@@ -3,6 +3,7 @@ $this->breadcrumbs = array(
     'Calendario',
 );
 
+
 $mano = Yii::app()->db->createCommand(
         "SELECT id, nombre, coste, minutos_duracion, imagen, informacion "
         . "FROM mano "
@@ -14,12 +15,6 @@ $handicap = Yii::app()->db->createCommand(
         . "FROM handicap "
         . "WHERE vivo = 1"
 )->query();
-
-//$pieza = Yii::app()->db->createCommand(
-//        "SELECT id, nombre, precio, precio_instalar, marca_pieza_id, imagen, minutos_instalacion, informacion, categoria_pieza_id "
-//        . "FROM pieza "
-//        . "WHERE vivo = 1"
-//)->query();
 
 $categoria_pieza = Yii::app()->db->createCommand(
         "SELECT id, nombre, imagen "
@@ -34,7 +29,7 @@ $marca_pieza = Yii::app()->db->createCommand(
 )->query();
 
 $cita = Yii::app()->db->createCommand(
-        "SELECT id, fecha_cita, fecha_cal_recogida, comentarios_cliente, datediff(fecha_cita, fecha_cal_recogida) AS duracion "
+        "SELECT id, fecha_cita "
         . "FROM cita "
         . "WHERE vivo = 1"
 )->query();
@@ -172,20 +167,37 @@ $cita = Yii::app()->db->createCommand(
           H
           </div>
         </fieldset>
-        <button id="consultar-fecha" class="btn btn-primary">Consultar fechas</button>
+        <button id="consultar-fecha" class="btn btn-primary">Consultar fecha</button>
+        <button id="ver-fechas" onclick="$('#div-fechas').slideToggle('fast')" class="btn btn-primary">Fechas ocupadas</button>
         <br />
+        <div id="div-fechas" style="display: none">
+          <br />Fechas ocupadas:<br />
+          <select multiple id="select-fechas">
+            <?php
+            foreach($cita as $i => $campo){
+              echo '<option value="'.$campo['id'].'">'.$campo['fecha_cita'].'</option>';
+            }
+            ?>
+          </select>
+        </div>
         <br />
-        <label for="comentario" title="máximo 200 caractéres">Aquí puede dejar un comentario al técnico:</label>
-        <textarea title="máximo 200 caractéres" maxlength="200" id="comentario" style="width: 90%" rows="6"></textarea>
+        <label for="comentarios" title="máximo 200 caractéres">Aquí puede dejar un comentario al técnico:</label>
+        <textarea title="máximo 200 caractéres" maxlength="200" id="comentarios" style="width: 90%" rows="6"></textarea>
       </div>
     </div>
     <div id="box4" class="span6 ">
       <div class="caja-gris"><!-- box 4 -->
-        Precio total reparación y/o istalación: <input id="precio-total" type="text" />
+        Precio total reparación y/o istalación: <input id="precio-total" type="text" disabled />
         <br />
-        Duración reparación: <input id="duracion-total" type="text" />
+        Duración reparación: <input id="duracion-total" type="text" disabled />
         <br />
-        <button id="enviar-solicitud" class="btn btn-primary" title="Debe consultar primero las fechas">Enviar solicitud de cita</button>
+        <?php
+        if (Yii::app()->user->isGuest){
+          echo '<button class="btn btn-primary" onclick="window.location = \'/web/site/login\'" title="">Regístrese para solicitar cita</button>';
+        } else {
+          echo '<button id="enviar-solicitud" class="btn btn-primary" title="Debe consultar primero las fechas">Enviar solicitud de cita</button>';
+        }
+        ?>
       </div>
     </div>
   </div>
@@ -200,5 +212,6 @@ $cita = Yii::app()->db->createCommand(
    -->
 </div>
 
+<input id="nombre_cliente" type="hidden" value="<?php echo Yii::app()->user->name; ?>" />
 
 <script src="/web/js/calendarioFormCreate.js" type="text/javascript"></script>

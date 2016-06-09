@@ -226,18 +226,22 @@ function calculo(){//Calcula precio y tiempo reparación y actualiza los campos 
   
 }
 
-$('#datepicker-cita-minutos, #datepicker-recogida-minutos').focusout(function(){ //esto valida que los minutos no puedan ser 0 sino 00
+$('#datepicker-cita, #datepicker-cita, #datepicker-recogida-minutos').focusout(function(){ //esto valida que los minutos no puedan ser 0 sino 00
   if ($(this).val() == 0) {
     $(this).val('00');
   }
 });
 
-$('#datepicker-cita-hora, #datepicker-recogida-hora').focusout(function(){ //esto valida que las horas no puedan ser 9 sino 09
+$('#datepicker-recogida, #datepicker-cita-hora, #datepicker-recogida-hora').focusout(function(){ //esto valida que las horas no puedan ser 9 sino 09
   if ($(this).val().length == 1) {
     $(this).val(
       '0' + $(this).val()
     );
   }
+});
+
+$('#datepicker-cita, #datepicker-cita-hora, #datepicker-cita-minutos, #datepicker-recogida, #datepicker-recogida-hora, #datepicker-recogida-minutos').change(function(){ //si se modifica alguno de estos campos, habrá que volver a pulsar en consultar fehcas
+  $('#enviar-solicitud').attr('disabled', true);
 });
 
 
@@ -270,38 +274,41 @@ $('#consultar-fecha').click(function(){//envía la fecha del usuario al controla
 
 //hacer
 $('#enviar-solicitud').click(function(){
+  var fecha_cita = $('#datepicker-cita').val() + ' ' +
+    $('#datepicker-cita-hora').val() +  ':' +
+    $('#datepicker-cita-minutos').val() + ':00';
+    
+  var duracion_total = $('#duracion-total').attr('data-duracion_total');
+  var precio_cal = $('#precio-total').attr('data-precio_total');
+  var nombre_cliente = $('#nombre_cliente').val();
+  var comentarios_cliente = $('#comentarios').val();
   
-  var sI = $('#select-mano').val();
+  var consulta = {
+    fecha_cita: fecha_cita,
+    duracion_total: duracion_total,
+    precio_cal: precio_cal,
+    nombre_cliente: nombre_cliente,
+    comentarios_cliente: comentarios_cliente,    
+  };
+  
   $.ajax({
-      data: {'sI': sI},
+      data: consulta,
       dataType: 'JSON',
-      url: 'calendarioForm/refrescarHandicap',
+      url: 'calendarioForm/registrarSolicitud',
       type: 'POST',
       submit: function(){
-        $('#select-handicap').change();
       },
       success: function (obj) {
-        //actualizo dropdown handicap
-        $('#select-handicap').html('');
-        $.each(obj, function(i, tupla){
-          $('#select-handicap').html(
-            $('#select-handicap').html() +
-            '<option value="'+(i + 1)+'" data-id="'+tupla.id+'" data-minutos_duracion="'+tupla.minutos_duracion+'" data-imagen="'
-            +tupla.imagen+'" data-mano_id="'+tupla.mano_id+'" data-informacion="'+tupla.informacion+'">'
-            +tupla.nombre+' '+tupla.recargo+'€</option>'
-          );
-        });
-        //actualizo imagen mano
-        var ruta = $('#select-mano > option').eq(
-          $('#select-mano').prop('selectedIndex')
-        ).attr('data-imagen');
-        $('#img-mano').attr('src', ruta);
-        ruta = '';
-        $('#select-handicap').change();
+        console.log(obj);
+        if (obj.estado == 'Cita guardada'){
+          alerta3(obj.estado + ' con éxito');
+          $('#select-fechas').append('<option selected>'+obj.fecha_cita+'</option>');
+        } else {
+          alerta3('Error al guardar la cita');
+        }
       },
       error: function (e) {
         console.log(e);
-        $('#select-handicap').change();
       }
   });
 });

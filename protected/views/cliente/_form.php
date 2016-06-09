@@ -67,11 +67,16 @@
 		<?php echo $form->error($model,'fecha_modificacion'); ?>
 	</div>
 
-	<div class="row">
+        <div class="row" style="display: none"> <!-- oculto el input password original -->
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'password'); ?>
+		<?php echo $form->passwordField($model,'password'); ?>
 	</div>
+        
+        <div class="row"> <!-- muestro mi input password que enviará la password cifrada al original -->
+          <label for="miLoginPassword" >Contraseña <span class="required">*</span></label>
+          <input id="miLoginPassword" type="password">
+          <?php echo $form->error($model,'password'); ?> <!-- utulizo los errores del original -->
+        </div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'vivo'); ?>

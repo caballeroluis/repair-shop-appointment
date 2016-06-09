@@ -326,7 +326,7 @@ INSERT INTO `otro` (`nombre`, `valor`, `vivo`, `fecha_creacion`, `fecha_modifica
 'LOPD. Administrador, por favor consulte la tabla otro para editar este mensaje y redactar el aviso de la protección de datos.',
 1, '2016-01-10 00:00:00', '2016-01-10 00:00:00'),
 ('bienvenida1',
-'bienvenida1 ADMINISTRADOR, EDITE ESTOS MENSAJES DESDE LA TABLA OTRO <br />Desde la pestaña Calendario usted podrá solicitar un presupuesto para la reparación de su bicicleta.',
+'bienvenida1 ADMINISTRADOR, EDITE ESTOS MENSAJES DESDE LA TABLA OTRO.<big><b> loguéese como admin 1234 y cambie la password </b></big><br />Desde la pestaña Calendario usted podrá solicitar un presupuesto para la reparación de su bicicleta.',
 1, '2016-01-10 00:00:00', '2016-01-10 00:00:00'),
 ('bienvenida2',
 'bienvenida2<br />Si necesita solicitar una cita, pase primero por Registro para crear una cuenta o por Login, si ya tiene una cuenta, para acceder.',
