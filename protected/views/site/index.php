@@ -6,10 +6,19 @@ $this->pageTitle=Yii::app()->name;
 
 <h1>Bienvenido a <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
-<p>Desde la pestaña Calendario usted podrá solicitar un presupuesto para la 
-  reparación de su bicicleta.</p>
-<p>Si necesita solicitar una cita, pase primero por Registro para crear una 
-  cuenta o por Login, si ya tiene una cuenta, para acceder.</p>
+<p>
+<?php
+echo CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'bienvenida1'))['valor'];
+?>
+</p>
+
+<p>
+<?php
+echo CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'bienvenida2'))['valor'];
+?>
+</p>
+
+
 
 <!--<p>Congratulations! You have successfully created your Yii application.</p>
 

@@ -317,14 +317,24 @@ INSERT INTO `cliente` (`id`, `nombre`, `apellido1`, `apellido2`, `telefono`, `co
 -- Volcado de datos para la tabla `otro`
 --
 
-INSERT INTO `otro` (`nombre`, `valor`, `vivo`, `fecha_creacion`, `fecha_modificacion`, `id`) VALUES
-('iva', 21, 1, '2016-01-10 00:00:00', '2016-01-10 00:00:00', 1),
+INSERT INTO `otro` (`nombre`, `valor`, `vivo`, `fecha_creacion`, `fecha_modificacion`) VALUES
+('iva', 21, 1, '2016-01-10 00:00:00', '2016-01-10 00:00:00'),
 ('terminos',
 'Términos y condiciones:<br />Pendiente de redactar los términos y condiciones del servicio.<br />Por favor, consulte con el administrador. Administrador, consulte la tabla otros para editar este mensaje.',
-1, '2016-01-10 00:00:00', '2016-01-10 00:00:00', 2),
+1, '2016-01-10 00:00:00', '2016-01-10 00:00:00'),
 ('lopd',
-'LOPD. Administrador, por favor consulte la tabla otros para editar este mensaje y redactar el aviso de la protección de datos.',
-1, '2016-01-10 00:00:00', '2016-01-10 00:00:00', 3);
+'LOPD. Administrador, por favor consulte la tabla otro para editar este mensaje y redactar el aviso de la protección de datos.',
+1, '2016-01-10 00:00:00', '2016-01-10 00:00:00'),
+('bienvenida1',
+'bienvenida1 ADMINISTRADOR, EDITE ESTOS MENSAJES DESDE LA TABLA OTRO <br />Desde la pestaña Calendario usted podrá solicitar un presupuesto para la reparación de su bicicleta.',
+1, '2016-01-10 00:00:00', '2016-01-10 00:00:00'),
+('bienvenida2',
+'bienvenida2<br />Si necesita solicitar una cita, pase primero por Registro para crear una cuenta o por Login, si ya tiene una cuenta, para acceder.',
+1, '2016-01-10 00:00:00', '2016-01-10 00:00:00'),
+('pie',
+'Pie. Administrador, por favor consulte la tabla otro para editar este mensaje y redactar el pie de página a su gusto.',
+1, '2016-01-10 00:00:00', '2016-01-10 00:00:00')
+;
 
 --
 -- Volcado de datos para la tabla `estado`
@@ -385,9 +395,9 @@ INSERT INTO `handicap` (`nombre`, `recargo`, `minutos_duracion`, `informacion`, 
 --
 
 INSERT INTO `cita` (`fecha_cita`, `fecha_cal_recogida`, `precio_cal`, `estado_id`, `cliente_id`, `comentarios_cliente`) VALUES
-('2016-12-30 21:00:00', '2016-12-30 21:30:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 1'),
-('2016-12-30 21:30:00', '2016-12-30 22:00:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 2'),
-('2016-12-30 22:00:00', '2016-12-30 22:30:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 3')
+('2016-06-09 09:00:00', '2016-12-30 09:30:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 1'),
+('2016-06-09 09:30:00', '2016-12-30 10:00:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 2'),
+('2016-06-09 10:00:00', '2016-12-30 10:30:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 3')
 ;
 
 --

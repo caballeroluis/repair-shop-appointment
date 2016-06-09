@@ -29,7 +29,7 @@ class CalendarioFormController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create', 'refrescarHandicap', 'refrescarPieza'),
+				'actions'=>array('create', 'refrescarHandicap', 'refrescarPieza', 'consultarFecha'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -202,6 +202,31 @@ HEREDOC;
           
           header('Coarray_pusntent-type: application/json');
           echo CJSON::encode($pieza);
+        }
+        
+        public function actionConsultarFecha() {
+          $fecha = $_POST['fecha'];
+          $estado = 'disponible';
+          $consulta = <<<HEREDOC
+SELECT fecha_cita
+FROM cita
+WHERE vivo = 1;
+HEREDOC;
+          $cita = Yii::app()->db->createCommand($consulta)->query();
+          $cita = CJSON::encode($cita);
+          $cita = CJSON::decode($cita);
+          
+//          echo '<pre>';
+          foreach($cita as $i => $campo) {
+            if ($campo['fecha_cita'] == $fecha['fecha']) {
+              $estado = 'no disponible';
+              break;
+            }
+          }
+//          echo '</pre>';
+          
+          header('Coarray_pusntent-type: application/json');
+          echo CJSON::encode(array('estado' => $estado));
         }
 
 }

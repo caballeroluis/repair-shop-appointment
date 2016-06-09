@@ -3,13 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/web/protected/papelera/ejer7.php</file>
+            <file>file:/C:/xampp/htdocs/web/protected/views/cita/_form.php</file>
+            <file>file:/C:/xampp/htdocs/web/js/calendarioFormCreate.js</file>
+            <file>file:/C:/xampp/htdocs/web/protected/views/layouts/main.php</file>
+            <file>file:/C:/xampp/htdocs/web/protected/data/web4.sql</file>
+            <file>file:/C:/xampp/htdocs/web/js/registroFormCreate.js</file>
             <file>file:/C:/xampp/htdocs/web/protected/models/CalendarioForm.php</file>
             <file>file:/C:/xampp/htdocs/web/protected/views/calendarioForm/create.php</file>
             <file>file:/C:/xampp/htdocs/web/protected/runtime/application.log</file>
+            <file>file:/C:/xampp/htdocs/web/protected/config/main.php</file>
             <file>file:/C:/xampp/htdocs/web/protected/controllers/CalendarioFormController.php</file>
-            <file>file:/C:/xampp/htdocs/web/js/calendarioFormCreate.js</file>
-            <file>file:/C:/xampp/htdocs/web/protected/data/web4.sql</file>
-            <file>file:/C:/xampp/htdocs/web/js/registroFormCreate.js</file>
+            <file>file:/C:/xampp/htdocs/web/protected/views/site/index.php</file>
             <file>file:/C:/xampp/htdocs/web/protected/views/registroForm/create.php</file>
         </group>
     </open-files>

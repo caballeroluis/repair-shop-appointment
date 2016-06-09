@@ -33,17 +33,17 @@ $marca_pieza = Yii::app()->db->createCommand(
         . "WHERE vivo = 1"
 )->query();
 
-//$cita = Yii::app()->db->createCommand(
-//        "SELECT id, fecha_cita, fecha_cal_recogida, comentarios_cliente, datediff(fecha_cita, fecha_cal_recogida) AS duracion "
-//        . "FROM cita "
-//        . "WHERE vivo = 1"
-//)->query();
+$cita = Yii::app()->db->createCommand(
+        "SELECT id, fecha_cita, fecha_cal_recogida, comentarios_cliente, datediff(fecha_cita, fecha_cal_recogida) AS duracion "
+        . "FROM cita "
+        . "WHERE vivo = 1"
+)->query();
 ?>
 <div id="alerta-info2" class="alert alert-info alerta" style="background-color: #E6EFC2; color: black"></div>
 
 <div class="container">
+
   <div class="row">
-    
     <div id="box1" class="span6 ">
       <div class="caja-gris"><!-- box 1 -->
         <fieldset>
@@ -51,29 +51,29 @@ $marca_pieza = Yii::app()->db->createCommand(
           <select id="select-mano">
             <?php
             foreach($mano as $i => $campo){
-              echo '<option value="'.($i + 1).'" data-informacion="'.$campo['informacion'].'" data-imagen="'.$campo['imagen'].'">'.$campo['nombre'].' '.$campo['coste'].'€</option>';
+              echo '<option value="'.($i + 1).'" data-coste="'.$campo['coste'].'" data-minutos_duracion="'.$campo['minutos_duracion'].'" data-informacion="'.$campo['informacion'].'" data-imagen="'.$campo['imagen'].'">'.$campo['nombre'].' '.$campo['coste'].'€</option>';
             }
             ?>
           </select>
-          <a href="#" onclick="alerta3(
+          <button onclick="alerta3(
             $('#select-mano > option').eq(
               $('#select-mano').prop('selectedIndex')
             ).html() + ' : ' +
             $('#select-mano > option').eq(
               $('#select-mano').prop('selectedIndex')
             ).attr('data-informacion')
-          );" class="btn">?</a>
+          );" class="btn">?</button>
           
           <label for="select-handicap">¿Qué características tiene su bicicleta?</label>
           <select id="select-handicap"></select>  
-          <a href="#" onclick="alerta3(
+          <button onclick="alerta3(
             $('#select-handicap > option').eq(
               $('#select-handicap').prop('selectedIndex')
             ).html() + ' : ' +
             $('#select-handicap > option').eq(
               $('#select-handicap').prop('selectedIndex')
             ).attr('data-informacion')
-          );" class="btn">?</a>
+          );" class="btn">?</button>
           <br />
           <div class="img-polaroid">
             <img id="img-mano" />
@@ -87,7 +87,7 @@ $marca_pieza = Yii::app()->db->createCommand(
     <div id="box2" class="span6 ">
       <div class="caja-gris"><!-- box 1 -->
         <fieldset>
-          <label for="select-categoria_pieza">¿Necesita algo más?</label>
+          <label for="select-categoria_pieza">¿Necesita añadir algo más?</label>
           <select id="select-categoria_pieza">
             <?php
             foreach($categoria_pieza as $i => $campo){
@@ -100,58 +100,104 @@ $marca_pieza = Yii::app()->db->createCommand(
           <select id="select-pieza" style="width: 80%">
             <!--<option>(id) nombre marca() precioInstalada() (imagen) (minutos_instalacion) (informacion)</option>-->
           </select>
-          <a href="#" onclick="alerta3(
+          <button onclick="alerta3(
             $('#select-pieza > option').eq(
               $('#select-pieza').prop('selectedIndex')
             ).html() + ' : ' +
             $('#select-pieza > option').eq(
               $('#select-pieza').prop('selectedIndex')
             ).attr('data-informacion')
-          );" class="btn">?</a>
+          );" class="btn">?</button>
           <br />
           <div class="img-polaroid">
             <img id="img-pieza" />
           </div>
           <br />
-          Cantidad: <input id="cantidad" type="number" value="1" />
-          <a href="#" id="aniadir" class="btn btn-primary">Añadir</a>
+          Cantidad: <input id="cantidad" min="1" max="999" type="number" value="1" />
+          <button id="aniadir" class="btn btn-primary">Añadir</button>
           <br />
           Lista de añadidos:
           <select id="select-aniadir" multiple style="width: 100%"></select>
-          </div>
-      <a href="#" id="limpiar" class="btn btn-primary">Limpiar lista</a>
+          <button id="limpiar" class="btn btn-primary">Limpiar lista</button>
+        </div>
       </div>
-    </div>
-    
   </div>
-  <div class="row">
     
+  <div class="row">
     <div id="box3" class="span6 ">
       <div class="caja-gris"><!-- box 3 -->
-        <input  type="datetime" />
-        <a href="#" class="btn btn-primary">Seleccione fecha disponible</a>
-        <a href="#" class="btn btn-primary">Solicitar cita</a>
+        <fieldset>
+          <div id="cita">
+          <label for="datepicker-cita">Seleccione fecha de la cita</label>
+          <?php
+          $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+            'name' => 'fechaFin',
+            'language' => 'es',
+            'value' => date('Y-m-d'),
+            'options' => array(
+              'showAnim' => 'fold',
+              'dateFormat' => 'yy-mm-dd',
+            ),
+            'htmlOptions' => array(
+              'style' => 'width: 90px',
+              'id' => 'datepicker-cita',
+            ),
+          ));
+          ?>
+          a las
+          <input id="datepicker-cita-hora" type="number" value="10" min="9" max="19" style="width: 50px" /> : 
+          <input id="datepicker-cita-minutos" type="number" value="00" min="0" max="30" step="30" style="width: 50px" />
+          H
+          </div>
+          <div id="recogida">
+          <label for="datepicker-recogida">Seleccione fecha de recogida</label>
+          <?php
+          $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+            'name' => 'fechaFin',
+            'language' => 'es',
+            'value' => date('Y-m-d'),
+            'options' => array(
+              'showAnim' => 'fold',
+              'dateFormat' => 'yy-mm-dd',
+            ),
+            'htmlOptions' => array(
+              'style' => 'width: 90px',
+              'id' => 'datepicker-recogida',
+            ),
+          ));
+          ?>
+          a las
+          <input id="datepicker-recogida-hora" type="number" value="10" min="9" max="20" style="width: 50px" /> : 
+          <input id="datepicker-recogida-minutos" type="number" value="00" min="0" max="30" step="30" style="width: 50px" />
+          H
+          </div>
+        </fieldset>
+        <button id="consultar-fecha" class="btn btn-primary">Consultar fechas</button>
+        <br />
+        <br />
+        <label for="comentario" title="máximo 200 caractéres">Aquí puede dejar un comentario al técnico:</label>
+        <textarea title="máximo 200 caractéres" maxlength="200" id="comentario" style="width: 90%" rows="6"></textarea>
       </div>
     </div>
-    
     <div id="box4" class="span6 ">
       <div class="caja-gris"><!-- box 4 -->
-        CALENDARIO
-      </div>
-    </div>
-        
-  </div>
-  <div class="row">
-    
-    <div id="box5" class="span6 ">
-      <div class="caja-gris"><!-- box 5 -->
-        Precio total: <input type="number" />
+        Precio total reparación y/o istalación: <input id="precio-total" type="text" />
         <br />
-        Duración reparación: <input type="number" />
+        Duración reparación: <input id="duracion-total" type="text" />
+        <br />
+        <button id="enviar-solicitud" class="btn btn-primary" title="Debe consultar primero las fechas">Enviar solicitud de cita</button>
       </div>
     </div>
-    
   </div>
+  
+<!--  <div class="row">
+    <div id="box5" class="span6 ">
+      <div class="caja-gris"> box 5 
+        
+      </div>
+    </div>
+  </div>
+   -->
 </div>
 
 

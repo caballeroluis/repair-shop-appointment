@@ -95,6 +95,30 @@
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
+        <div id="cita" style="display: none">
+          <label for="datepicker-cita">Seleccione fecha de la cita</label>
+          <?php
+          $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+            'name' => 'fechaFin',
+            'language' => 'es',
+            'value' => date('Y-m-d'),
+            'options' => array(
+              'showAnim' => 'fold',
+              'dateFormat' => 'yy-mm-dd',
+            ),
+            'htmlOptions' => array(
+              'style' => 'width: 90px',
+              'id' => 'datepicker-cita',
+            ),
+          ));
+          ?>
+          a las
+          <input id="datepicker-cita-hora" type="number" value="10" min="10" max="19" style="width: 50px" /> : 
+          <input id="datepicker-cita-minutos" type="number" value="00" min="0" max="30" step="30" style="width: 50px" />
+          H
+          </div>
+        
+        
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
