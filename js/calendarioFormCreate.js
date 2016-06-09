@@ -70,7 +70,7 @@ $('#select-mano').change(function(){
         calculo();
       },
       error: function (e) {
-        console.log(e);
+        alert('error en la petición');
         $('#select-handicap').change();
       }
   });
@@ -105,7 +105,7 @@ $('#select-categoria_pieza').change(function(){
         calculo();
       },
       error: function (e) {
-        console.log(e);
+        alert('error en la petición');
       }
   });
 });
@@ -267,7 +267,7 @@ $('#consultar-fecha').click(function(){//envía la fecha del usuario al controla
         }
       },
       error: function (e) {
-        console.log(e);
+        alert('error en la petición');
       }
   });
 });
@@ -299,7 +299,6 @@ $('#enviar-solicitud').click(function(){
       submit: function(){
       },
       success: function (obj) {
-        console.log(obj);
         if (obj.estado == 'Cita guardada'){
           alerta3(obj.estado + ' con éxito');
           $('#select-fechas').append('<option selected>'+obj.fecha_cita+'</option>');
@@ -308,7 +307,7 @@ $('#enviar-solicitud').click(function(){
         }
       },
       error: function (e) {
-        console.log(e);
+        alert('error en la petición');
       }
   });
 });

@@ -395,9 +395,9 @@ INSERT INTO `handicap` (`nombre`, `recargo`, `minutos_duracion`, `informacion`, 
 --
 
 INSERT INTO `cita` (`fecha_cita`, `fecha_cal_recogida`, `precio_cal`, `estado_id`, `cliente_id`, `comentarios_cliente`) VALUES
-('2016-06-09 09:00:00', '2016-12-30 09:30:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 1'),
-('2016-06-09 09:30:00', '2016-12-30 10:00:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 2'),
-('2016-06-09 10:00:00', '2016-12-30 10:30:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 3')
+('2016-06-13 09:00:00', '2016-12-30 09:30:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 1'),
+('2016-06-13 09:30:00', '2016-12-30 10:00:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 2'),
+('2016-06-13 10:00:00', '2016-12-30 10:30:00', 50, 1, 1, 'soy el cliente y esto es mi comentario en cita 3')
 ;
 
 --
