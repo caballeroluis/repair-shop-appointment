@@ -117,7 +117,7 @@ $this->breadcrumbs=array(
     <div class="span10">
       <div id="div-terminos" style="display: none" class="alert alert-info">
         <?php
-        print_r(CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'terminos'))['valor']);
+        print_r(CActiveRecord::model('Otro')->findByAttributes(array('nombre' => 'terminos'))['valor']);
         ?>
       </div>
     </div>
@@ -127,7 +127,7 @@ $this->breadcrumbs=array(
     <div class="span10">
       <div id="div-lopd" class="alert alert-info">
         <?php
-        echo CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'lopd'))['valor'];
+        echo CActiveRecord::model('Otro')->findByAttributes(array('nombre' => 'lopd'))['valor'];
         ?>
       </div>
     </div>

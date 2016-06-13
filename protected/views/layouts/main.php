@@ -65,7 +65,7 @@
 		<?php // echo Yii::powered(); ?>
                 
                 <?php
-                echo CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'pie'))['valor'];
+                echo CActiveRecord::model('Otro')->findByAttributes(array('nombre' => 'pie'))['valor'];
                 ?>
 	</div><!-- footer -->
 

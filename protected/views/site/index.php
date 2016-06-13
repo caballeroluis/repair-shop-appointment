@@ -8,13 +8,13 @@ $this->pageTitle=Yii::app()->name;
 
 <p>
 <?php
-echo CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'bienvenida1'))['valor'];
+echo CActiveRecord::model('Otro')->findByAttributes(array('nombre' => 'bienvenida1'))['valor'];
 ?>
 </p>
 
 <p>
 <?php
-echo CActiveRecord::model('otro')->findByAttributes(array('nombre' => 'bienvenida2'))['valor'];
+echo CActiveRecord::model('Otro')->findByAttributes(array('nombre' => 'bienvenida2'))['valor'];
 ?>
 </p>
 
